@@ -1,3 +1,7 @@
 export default function PharmacyMap() {
-  return;
+  return (
+    <>
+      <h1>Mapa</h1>
+    </>
+  );
 }

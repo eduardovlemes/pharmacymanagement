@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 export default function LoginForm() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const navigate = useNavigate();
 
   function HandleSubmit(event) {
     event.preventDefault();
@@ -28,6 +30,8 @@ export default function LoginForm() {
       alert("A senha deve conter apenas letras e/ou números.");
       return;
     }
+    event.target.checkValidity();
+    navigate("/mapa");
   }
 
   return (
