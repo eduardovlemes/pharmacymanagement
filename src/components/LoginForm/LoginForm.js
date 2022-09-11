@@ -4,15 +4,16 @@ export default function LoginForm() {
       <h2>Login</h2>
       <form>
         <label>
-          E-mail <input required />
+          E-mail
+          <input required type="email" placeholder="exemplo@mail.com" />
         </label>
 
         <label>
-          Senha <input required />
+          Senha
+          <input required type="password" />
         </label>
-
-        <button>Acessar</button>
-        <button>Cadastrar</button>
+        <button type="submit">Entrar</button>
+        <button>Cadastrar usuário</button>
       </form>
     </>
   );
