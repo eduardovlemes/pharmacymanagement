@@ -1,3 +1,10 @@
 export default function DrugItem() {
-  return;
+  return(
+    <>
+    <img></img>
+    <span>Medicamento</span>
+    <span>Dosagem</span>
+    <p>Laboratório</p>
+    </>
+  );
 }
