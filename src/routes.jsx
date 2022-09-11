@@ -8,11 +8,13 @@ import DrugListPage from "./pages/DrugListPage";
 export default function Router() {
   return (
     <BrowserRouter>
-      <Route path="/" element={<LoginPage />} />
-      <Route path="/mapa" element={<MapPage />} />
-      <Route path="/novafarmacia" element={<PharmacyRegistrationPage />} />
-      <Route path="/novomedicamento" element={<DrugRegistrationPage />} />
-      <Route path="/listamedicamentos" element={<DrugListPage />} />
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/mapa" element={<MapPage />} />
+        <Route path="/novafarmacia" element={<PharmacyRegistrationPage />} />
+        <Route path="/novomedicamento" element={<DrugRegistrationPage />} />
+        <Route path="/listamedicamentos" element={<DrugListPage />} />
+      </Routes>
     </BrowserRouter>
   );
 }
