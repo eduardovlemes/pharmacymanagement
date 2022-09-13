@@ -75,7 +75,7 @@ export default function PharmacyForm() {
     <>
       <form onSubmit={HandleSubmit}>
         <label>
-          Razão Social
+          Razão Social*
           <input
             required
             type="text"
@@ -86,7 +86,7 @@ export default function PharmacyForm() {
         </label>
 
         <label>
-          CNPJ
+          CNPJ*
           <input
             required
             type="number"
@@ -97,7 +97,7 @@ export default function PharmacyForm() {
         </label>
 
         <label>
-          Nome Fantasia
+          Nome Fantasia*
           <input
             required
             type="text"
@@ -108,7 +108,7 @@ export default function PharmacyForm() {
         </label>
 
         <label>
-          E-mail
+          E-mail*
           <input
             required
             type="email"
@@ -119,7 +119,7 @@ export default function PharmacyForm() {
         </label>
 
         <label>
-          Telefone
+          Telefone*
           <input
             required
             type="number"
@@ -130,7 +130,7 @@ export default function PharmacyForm() {
         </label>
 
         <label>
-          Celular
+          Celular*
           <input
             required
             type="number"
@@ -144,7 +144,7 @@ export default function PharmacyForm() {
 
         <label>Endereço</label>
         <label>
-          CEP
+          CEP*
           <input
             required
             type="number"
@@ -155,7 +155,7 @@ export default function PharmacyForm() {
         </label>
 
         <label>
-          Logradouro
+          Logradouro*
           <input
             required
             type="text"
@@ -165,7 +165,7 @@ export default function PharmacyForm() {
         </label>
 
         <label>
-          Número
+          Número*
           <input
             required
             type="number"
@@ -175,7 +175,7 @@ export default function PharmacyForm() {
         </label>
 
         <label>
-          Bairro
+          Bairro*
           <input
             required
             type="text"
@@ -185,7 +185,7 @@ export default function PharmacyForm() {
         </label>
 
         <label>
-          Cidade
+          Cidade*
           <input
             required
             type="text"
@@ -195,7 +195,7 @@ export default function PharmacyForm() {
         </label>
 
         <label>
-          Estado
+          Estado*
           <input
             required
             type="text"
@@ -214,7 +214,7 @@ export default function PharmacyForm() {
         </label>
 
         <label>
-          Latitude
+          Latitude*
           <input
             required
             type="number"
@@ -224,7 +224,7 @@ export default function PharmacyForm() {
         </label>
 
         <label>
-          Longitude
+          Longitude*
           <input
             required
             type="number"
