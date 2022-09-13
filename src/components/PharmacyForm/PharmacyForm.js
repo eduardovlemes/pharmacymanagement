@@ -76,6 +76,21 @@ export default function PharmacyForm() {
     }
   }
 
+  function HandleAddresss() {
+    try {
+      fetch(`https://viacep.com.br/ws/${cep.replace(/[^0-9]/, "")}/json/`)
+        .then((response) => response.json())
+        .then((dataFromViaCep) => {
+          setStreet(dataFromViaCep.logradouro);
+          setDistrict(dataFromViaCep.bairro);
+          setCity(dataFromViaCep.localidade);
+          setFederativeUnit(dataFromViaCep.uf);
+        });
+    } catch (error) {
+      alert("O CEP informado é inválido.");
+    }
+  }
+
   return (
     <>
       <form onSubmit={HandleSubmit}>
@@ -156,6 +171,7 @@ export default function PharmacyForm() {
             placeholder="00.000-000"
             value={cep}
             onChange={(event) => setCep(event.target.value)}
+            onBlur={HandleAddresss}
           />
         </label>
 
