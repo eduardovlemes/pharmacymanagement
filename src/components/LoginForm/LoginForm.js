@@ -39,7 +39,7 @@ export default function LoginForm() {
       <h2>Login</h2>
       <form onSubmit={HandleSubmit}>
         <label>
-          E-mail
+          E-mail*
           <input
             required
             type="email"
@@ -50,7 +50,7 @@ export default function LoginForm() {
         </label>
 
         <label>
-          Senha
+          Senha*
           <input
             required
             type="password"
