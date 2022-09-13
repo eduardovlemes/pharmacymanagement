@@ -9,24 +9,29 @@ export default function DrugForm() {
   const [description, setDescription] = useState("");
 
   function HandleSubmit(event) {
-    event.preventDefault();
-    if (!drug) {
-      alert("O preenchimento do campo Medicamento é obrigatório.");
-      return;
-    } else if (!lab) {
-      alert("O preenchimento do campo Laboratório é obrigatório.");
-      return;
-    } else if (!dosage) {
-      alert("O preenchimento do campo Dosagem é obrigatório.");
-      return;
-    } else if (!type) {
-      alert("O preenchimento do campo Tipo é obrigatório.");
-      return;
-    } else if (!price) {
-      alert("O preenchimento do campo Preço é obrigatório.");
-      return;
+    try {
+      event.preventDefault();
+      if (!drug) {
+        alert("O preenchimento do campo Medicamento é obrigatório.");
+        return;
+      } else if (!lab) {
+        alert("O preenchimento do campo Laboratório é obrigatório.");
+        return;
+      } else if (!dosage) {
+        alert("O preenchimento do campo Dosagem é obrigatório.");
+        return;
+      } else if (!type) {
+        alert("O preenchimento do campo Tipo é obrigatório.");
+        return;
+      } else if (!price) {
+        alert("O preenchimento do campo Preço é obrigatório.");
+        return;
+      }
+      event.target.checkValidity();
+      alert("Medicamento cadastrado com sucesso!");
+    } catch (error) {
+      alert("ERRO no cadastramento do medicamento. Tente novamente.");
     }
-    event.target.checkValidity();
   }
 
   return (
@@ -77,8 +82,11 @@ export default function DrugForm() {
             <option value="" selected disabled>
               Selecione
             </option>
-            <option value="" selected>
-              tipo1
+            <option value="controlled" selected>
+              Medicamento controlado
+            </option>
+            <option value="common" selected>
+              Medicamento comum
             </option>
           </select>
         </label>
