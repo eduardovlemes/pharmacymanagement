@@ -18,57 +18,62 @@ export default function PharmacyForm() {
   const [longitude, setLongitude] = useState("");
 
   function HandleSubmit(event) {
-    event.preventDefault();
-    if (!corporateName) {
-      alert("O preenchimento do campo Razão Social é obrigatório.");
-      return;
-    } else if (!cnpj) {
-      alert("O preenchimento do campo CNPJ é obrigatório.");
-      return;
-    } else if (!tradeName) {
-      alert("O preenchimento do campo Nome Fantasia é obrigatório.");
-      return;
-    } else if (
-      !email.match(
-        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-      )
-    ) {
-      alert(
-        "O preenchimento do campo E-mail é obrigatório. Digite um E-mail válido."
-      );
-      return;
-    } else if (!phone) {
-      alert("O preenchimento do campo Telefone é obrigatório.");
-      return;
-    } else if (!cellphone) {
-      alert("O preenchimento do campo Celular é obrigatório.");
-      return;
-    } else if (!cep) {
-      alert("O preenchimento do campo CEP é obrigatório.");
-      return;
-    } else if (!street) {
-      alert("O preenchimento do campo Rua é obrigatório.");
-      return;
-    } else if (!addressNumber) {
-      alert("O preenchimento do campo Número é obrigatório.");
-      return;
-    } else if (!district) {
-      alert("O preenchimento do campo Bairro é obrigatório.");
-      return;
-    } else if (!city) {
-      alert("O preenchimento do campo Cidade é obrigatório.");
-      return;
-    } else if (!federativeUnit) {
-      alert("O preenchimento do campo Estado é obrigatório.");
-      return;
-    } else if (!latitude) {
-      alert("O preenchimento do campo Latitude é obrigatório.");
-      return;
-    } else if (!longitude) {
-      alert("O preenchimento do campo Longitude é obrigatório.");
-      return;
+    try {
+      event.preventDefault();
+      if (!corporateName) {
+        alert("O preenchimento do campo Razão Social é obrigatório.");
+        return;
+      } else if (!cnpj) {
+        alert("O preenchimento do campo CNPJ é obrigatório.");
+        return;
+      } else if (!tradeName) {
+        alert("O preenchimento do campo Nome Fantasia é obrigatório.");
+        return;
+      } else if (
+        !email.match(
+          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+        )
+      ) {
+        alert(
+          "O preenchimento do campo E-mail é obrigatório. Digite um E-mail válido."
+        );
+        return;
+      } else if (!phone) {
+        alert("O preenchimento do campo Telefone é obrigatório.");
+        return;
+      } else if (!cellphone) {
+        alert("O preenchimento do campo Celular é obrigatório.");
+        return;
+      } else if (!cep) {
+        alert("O preenchimento do campo CEP é obrigatório.");
+        return;
+      } else if (!street) {
+        alert("O preenchimento do campo Rua é obrigatório.");
+        return;
+      } else if (!addressNumber) {
+        alert("O preenchimento do campo Número é obrigatório.");
+        return;
+      } else if (!district) {
+        alert("O preenchimento do campo Bairro é obrigatório.");
+        return;
+      } else if (!city) {
+        alert("O preenchimento do campo Cidade é obrigatório.");
+        return;
+      } else if (!federativeUnit) {
+        alert("O preenchimento do campo Estado é obrigatório.");
+        return;
+      } else if (!latitude) {
+        alert("O preenchimento do campo Latitude é obrigatório.");
+        return;
+      } else if (!longitude) {
+        alert("O preenchimento do campo Longitude é obrigatório.");
+        return;
+      }
+      event.target.checkValidity();
+      alert("Farmácia cadastrada com SUCESSO!");
+    } catch (error) {
+      alert("ERRO no cadastramento! Tente novamente.");
     }
-    event.target.checkValidity();
   }
 
   return (
