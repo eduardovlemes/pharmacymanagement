@@ -8,11 +8,35 @@ export default function DrugForm() {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
 
+  function HandleSubmit(event) {
+    event.preventDefault();
+    if (!drug) {
+      alert("O preenchimento do campo Medicamento é obrigatório.");
+      return;
+    } else if (!lab) {
+      alert("O preenchimento do campo Laboratório é obrigatório.");
+      return;
+    } else if (!dosage) {
+      alert("O preenchimento do campo Dosagem é obrigatório.");
+      return;
+    } else if (!type) {
+      alert("O preenchimento do campo Tipo é obrigatório.");
+      return;
+    } else if (!price) {
+      alert("O preenchimento do campo Preço é obrigatório.");
+      return;
+    } else if (!description) {
+      alert("O preenchimento do campo Descrição é obrigatório.");
+      return;
+    }
+    event.target.checkValidity();
+  }
+
   return (
     <>
-      <form>
+      <form onSubmit={HandleSubmit}>
         <label>
-          Medicamento{" "}
+          Medicamento*
           <input
             required
             type="text"
@@ -23,18 +47,18 @@ export default function DrugForm() {
         </label>
 
         <label>
-          Laboratório{" "}
+          Laboratório*
           <input
             required
             type="text"
-            placeholder="Catarinense Pharma"
+            placeholder="Catarina Pharma"
             value={lab}
             onChange={(event) => setLab(event.target.value)}
           />
         </label>
 
         <label>
-          Dosagem{" "}
+          Dosagem*
           <input
             required
             type="text"
@@ -45,7 +69,7 @@ export default function DrugForm() {
         </label>
 
         <label>
-          Tipo{" "}
+          Tipo*
           <input
             required
             type="text"
@@ -56,18 +80,18 @@ export default function DrugForm() {
         </label>
 
         <label>
-          Preço Unitário{" "}
+          Preço Unitário*
           <input
             required
             type="number"
-            placeholder="R$ 5,00"
+            placeholder="R$ 9,90"
             value={price}
             onChange={(event) => setPrice(event.target.value)}
           />
         </label>
 
         <label>
-          Descrição{" "}
+          Descrição*
           <textarea
             required
             type="text"
@@ -78,7 +102,7 @@ export default function DrugForm() {
         </label>
 
         <button>Limpar</button>
-        <button>Salvar</button>
+        <button onSubmit={HandleSubmit}>Salvar</button>
       </form>
     </>
   );
