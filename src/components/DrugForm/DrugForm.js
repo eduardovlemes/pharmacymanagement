@@ -25,9 +25,6 @@ export default function DrugForm() {
     } else if (!price) {
       alert("O preenchimento do campo Preço é obrigatório.");
       return;
-    } else if (!description) {
-      alert("O preenchimento do campo Descrição é obrigatório.");
-      return;
     }
     event.target.checkValidity();
   }
@@ -70,13 +67,20 @@ export default function DrugForm() {
 
         <label>
           Tipo*
-          <input
+          <select
             required
             type="text"
             placeholder="anti-inflamatório"
             value={type}
             onChange={(event) => setType(event.target.value)}
-          />
+          >
+            <option value="" selected disabled>
+              Selecione
+            </option>
+            <option value="" selected>
+              tipo1
+            </option>
+          </select>
         </label>
 
         <label>
@@ -93,7 +97,6 @@ export default function DrugForm() {
         <label>
           Descrição*
           <textarea
-            required
             type="text"
             placeholder="Digite uma descrição do medicamento."
             value={description}
