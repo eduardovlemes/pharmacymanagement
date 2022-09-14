@@ -6,7 +6,7 @@ export default function LoginForm() {
   const [password, setPassword] = useState();
   const navigate = useNavigate();
 
-  function HandleSubmit(event) {
+  function handleSubmit(event) {
     event.preventDefault();
     if (!email) {
       alert("Insira um email.");
@@ -37,7 +37,7 @@ export default function LoginForm() {
   return (
     <>
       <h2>Login</h2>
-      <form onSubmit={HandleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label>
           E-mail*
           <input
