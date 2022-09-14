@@ -8,7 +8,7 @@ export default function DrugForm() {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
 
-  function HandleSubmit(event) {
+  function handleSubmit(event) {
     try {
       event.preventDefault();
       if (!drug) {
@@ -36,7 +36,7 @@ export default function DrugForm() {
 
   return (
     <>
-      <form onSubmit={HandleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label>
           Medicamento*
           <input
@@ -113,7 +113,7 @@ export default function DrugForm() {
         </label>
 
         <button>Limpar</button>
-        <button onSubmit={HandleSubmit}>Salvar</button>
+        <button onSubmit={handleSubmit}>Salvar</button>
       </form>
     </>
   );
