@@ -17,7 +17,7 @@ export default function PharmacyForm() {
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
 
-  function HandleSubmit(event) {
+  function handleSubmit(event) {
     try {
       event.preventDefault();
       if (!corporateName) {
@@ -76,16 +76,26 @@ export default function PharmacyForm() {
     }
   }
 
-  function HandleAddresss() {
+  async function handleAddress() {
     try {
-      fetch(`https://viacep.com.br/ws/${cep.replace(/[^0-9]/, "")}/json/`)
+      await fetch(`https://viacep.com.br/ws/${cep.replace(/[^0-9]/, "")}/json/`)
         .then((response) => response.json())
         .then((dataFromViaCep) => {
           setStreet(dataFromViaCep.logradouro);
           setDistrict(dataFromViaCep.bairro);
           setCity(dataFromViaCep.localidade);
           setFederativeUnit(dataFromViaCep.uf);
-        });
+        })
+        .then(
+          await fetch(
+            `https://nominatim.openstreetmap.org/search.php?postalcode=${cep}&format=json`
+          )
+            .then((response) => response.json())
+            .then((dataFromNominatim) => {
+              setLatitude(dataFromNominatim[0].lat);
+              setLongitude(dataFromNominatim[0].lon);
+            })
+        );
     } catch (error) {
       alert("O CEP informado é inválido.");
     }
@@ -93,7 +103,7 @@ export default function PharmacyForm() {
 
   return (
     <>
-      <form onSubmit={HandleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label>
           Razão Social*
           <input
@@ -171,7 +181,7 @@ export default function PharmacyForm() {
             placeholder="00.000-000"
             value={cep}
             onChange={(event) => setCep(event.target.value)}
-            onBlur={HandleAddresss}
+            onBlur={handleAddress}
           />
         </label>
 
@@ -255,7 +265,7 @@ export default function PharmacyForm() {
         </label>
 
         <button>Limpar</button>
-        <button onSubmit={HandleSubmit}>Salvar</button>
+        <button onSubmit={handleSubmit}>Salvar</button>
       </form>
     </>
   );
