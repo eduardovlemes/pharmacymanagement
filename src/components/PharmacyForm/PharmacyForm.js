@@ -88,7 +88,7 @@ export default function PharmacyForm() {
         })
         .then(
           await fetch(
-            `https://nominatim.openstreetmap.org/search.php?postalcode=${cep}&format=json`
+            `https://nominatim.openstreetmap.org/search.php?q=${cep}+${street}+${district}&format=json`
           )
             .then((response) => response.json())
             .then((dataFromNominatim) => {
