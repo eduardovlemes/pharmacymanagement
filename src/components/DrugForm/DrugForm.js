@@ -75,7 +75,6 @@ export default function DrugForm() {
           <select
             required
             type="text"
-            placeholder="anti-inflamatório"
             value={type}
             onChange={(event) => setType(event.target.value)}
           >
