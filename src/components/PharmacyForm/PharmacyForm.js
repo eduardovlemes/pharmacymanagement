@@ -97,7 +97,7 @@ export default function PharmacyForm() {
             })
         );
     } catch (error) {
-      alert("O CEP informado é inválido.");
+      alert("Erro no servidor. CEP ou Latitude e Longitude não encontrado.");
     }
   }
 
