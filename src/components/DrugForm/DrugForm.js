@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export default function DrugForm() {
+  const [imgDrug, setImgDrug] = useState("");
   const [drug, setDrug] = useState("");
   const [lab, setLab] = useState("");
   const [dosage, setDosage] = useState("");
@@ -32,11 +33,38 @@ export default function DrugForm() {
     } catch (error) {
       alert("ERRO no cadastramento do medicamento. Tente novamente.");
     }
+
+    const sendDataToServer = fetch("http://localhost:3001/drugs", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({
+        imgDrug: imgDrug,
+        drug: drug,
+        lab: lab,
+        dosage: dosage,
+        type: type,
+        price: price,
+        description: description,
+      }),
+    });
+    console.log(sendDataToServer);
   }
 
   return (
     <>
       <form onSubmit={handleSubmit}>
+        <label>
+          URL da Imagem do Medicamento*
+          <input
+            type="url"
+            placeholder="https://"
+            value={imgDrug}
+            onChange={(event) => setImgDrug(event.target.value)}
+          />
+        </label>
         <label>
           Medicamento*
           <input
