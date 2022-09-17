@@ -1,7 +1,6 @@
 {
-  "pharmacys": [
+  "pharmacies": [
     {
-      "id": "aa",
       "corporateName": "Clamed",
       "cnpj": "84.683.481/0102-10",
       "tradeName": "Drogaria Catarinense",
@@ -16,10 +15,10 @@
       "federativeUnit": "SC",
       "addressCompl": "Ao lado da Clamed",
       "latitude": "-26,301586370588232",
-      "longitude": "-48,84871467058824"
+      "longitude": "-48,84871467058824",
+      "id": "aa"
     },
     {
-      "id": "ba",
       "corporateName": "Clamed",
       "cnpj": "84.683.481/0102-10",
       "tradeName": "Drogaria Catarinense",
@@ -34,10 +33,10 @@
       "federativeUnit": "SC",
       "addressCompl": "Em frente à rotatória.",
       "latitude": "-27.817113",
-      "longitude": "-50.331734"
+      "longitude": "-50.331734",
+      "id": "ba"
     },
     {
-      "id": "cd",
       "corporateName": "Clamed",
       "cnpj": "84.683.481/0102-10",
       "tradeName": "Farmácia Preço Popular",
@@ -52,10 +51,10 @@
       "federativeUnit": "SC",
       "addressCompl": "Ao lado da lotérica Bolinha.",
       "latitude": "-27,594970071428573",
-      "longitude": "-48,55480542857143"
+      "longitude": "-48,55480542857143",
+      "id": "cd"
     },
     {
-      "id": "dc",
       "corporateName": "Clamed",
       "cnpj": "84.683.481/0102-10",
       "tradeName": "Farmácia Preço Popular",
@@ -70,10 +69,10 @@
       "federativeUnit": "PR",
       "addressCompl": "Ao lado do Tecno Ótica",
       "latitude": "-27,5912736",
-      "longitude": "-48,5606522"
+      "longitude": "-48,5606522",
+      "id": "dc"
     },
     {
-      "id": "ef",
       "corporateName": "Clamed",
       "cnpj": "03.571.509/0001-82",
       "tradeName": "Farmácia Preço Popular",
@@ -88,10 +87,10 @@
       "federativeUnit": "MT",
       "addressCompl": "Ao lado da Caixa Econômica Federal",
       "latitude": "-20.461968",
-      "longitude": "-54.603841"
+      "longitude": "-54.603841",
+      "id": "ef"
     },
     {
-      "id": "fe",
       "corporateName": "Clamed",
       "cnpj": "03.571.509/0001-82",
       "tradeName": "Proformula",
@@ -106,7 +105,8 @@
       "federativeUnit": "SC",
       "addressCompl": "Ao lado da Drogaria Catarinense",
       "latitude": "-26.288674",
-      "longitude": "-48.846055"
+      "longitude": "-48.846055",
+      "id": "fe"
     }
   ],
   "drugs": [

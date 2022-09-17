@@ -74,6 +74,32 @@ export default function PharmacyForm() {
     } catch (error) {
       alert("ERRO no cadastramento! Tente novamente.");
     }
+
+    const sendDataToServer = fetch("http://localhost:3001/pharmacies", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({
+        corporateName: corporateName,
+        cnpj: cnpj,
+        tradeName: tradeName,
+        email: email,
+        phone: phone,
+        cellphone: cellphone,
+        cep: cep,
+        street: street,
+        addressNumber: addressNumber,
+        district: district,
+        city: city,
+        federativeUnit: federativeUnit,
+        addressCompl: addressCompl,
+        latitude: latitude,
+        longitude: longitude,
+      }),
+    });
+    console.log(sendDataToServer);
   }
 
   async function handleAddress() {
