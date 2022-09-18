@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function DrugForm() {
   const [imgDrug, setImgDrug] = useState("");
@@ -6,6 +6,7 @@ export default function DrugForm() {
   const [lab, setLab] = useState("");
   const [dosage, setDosage] = useState("");
   const [type, setType] = useState("");
+  const [drugType, setDrugType] = useState([]);
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
 
@@ -52,6 +53,17 @@ export default function DrugForm() {
     });
     console.log(sendDataToServer);
   }
+
+  useEffect(() => {
+    async function getType() {
+      await fetch("http://localhost:3001/drugType")
+        .then((response) => response.json())
+        .then((dataFromDrugsTypeServer) => {
+          setDrugType(dataFromDrugsTypeServer);
+        });
+    }
+    getType();
+  }, []);
 
   return (
     <>
@@ -102,19 +114,15 @@ export default function DrugForm() {
           Tipo*
           <select
             required
-            type="text"
             value={type}
             onChange={(event) => setType(event.target.value)}
           >
             <option value="" selected disabled>
               Selecione
             </option>
-            <option value="controlled" selected>
-              Medicamento controlado
-            </option>
-            <option value="common" selected>
-              Medicamento comum
-            </option>
+            {drugType.map((type) => (
+              <option value={type}>{type}</option>
+            ))}
           </select>
         </label>
 
