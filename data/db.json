@@ -112,7 +112,7 @@
   "drugs": [
     {
       "imgDrug": "https://farmagora.vteximg.com.br/arquivos/ids/170399-1000-1000/737707.jpg?v=637343311049000000",
-      "drug": "Vitamina C",
+      "drugName": "Vitamina C",
       "lab": "Catarinense Pharma",
       "dosage": "1000 mg",
       "type": "Medicamento comum",
@@ -122,7 +122,7 @@
     },
     {
       "imgDrug": "https://farmagora.vteximg.com.br/arquivos/ids/168271-1000-1000/719806.jpg?v=637343309528130000",
-      "drug": "Ômega 3",
+      "drugName": "Ômega 3",
       "lab": "Catarinense Pharma",
       "dosage": "1000 mg",
       "type": "Medicamento comum",
@@ -132,7 +132,7 @@
     },
     {
       "imgDrug": "https://farmagora.vteximg.com.br/arquivos/ids/169841-1000-1000/737316.jpg?v=637343310717030000",
-      "drug": "Triptofano",
+      "drugName": "Triptofano",
       "lab": "Catarinense Pharma",
       "dosage": "860 mg",
       "type": "Medicamento comum",
@@ -142,7 +142,7 @@
     },
     {
       "imgDrug": "https://farmagora.vteximg.com.br/arquivos/ids/172935-300-300/690923.jpg?v=637343317739400000",
-      "drug": "Alcachofrax",
+      "drugName": "Alcachofrax",
       "lab": "Catarinense Pharma",
       "dosage": "335 mg",
       "type": "Medicamento comum",
@@ -152,7 +152,7 @@
     },
     {
       "imgDrug": "https://farmagora.vteximg.com.br/arquivos/ids/185112-300-300/741092.jpg?v=637789046128400000",
-      "drug": "Traumac Sport Ice",
+      "drugName": "Traumac Sport Ice",
       "lab": "Catarinense Pharma",
       "dosage": "125ml",
       "type": "Medicamento comum",
@@ -162,7 +162,7 @@
     },
     {
       "imgDrug": "https://farmagora.vteximg.com.br/arquivos/ids/192806-300-300/742764.jpg?v=637904002584730000",
-      "drug": "Zinco Kids",
+      "drugName": "Zinco Kids",
       "lab": "Catarinense Pharma",
       "dosage": "2mg/0,5ml",
       "type": "Medicamento comum",
@@ -172,7 +172,7 @@
     },
     {
       "imgDrug": "https://farmagora.vteximg.com.br/arquivos/ids/184076-300-300/741034.jpg?v=637722290050570000",
-      "drug": "Melatonina",
+      "drugName": "Melatonina",
       "lab": "Catarinense Pharma",
       "dosage": "0,21mg",
       "type": "Medicamento comum",

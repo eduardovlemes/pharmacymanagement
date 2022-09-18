@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function DrugForm() {
   const [imgDrug, setImgDrug] = useState("");
-  const [drug, setDrug] = useState("");
+  const [drugName, setDrugName] = useState("");
   const [lab, setLab] = useState("");
   const [dosage, setDosage] = useState("");
   const [type, setType] = useState("");
@@ -13,7 +13,7 @@ export default function DrugForm() {
   function handleSubmit(event) {
     try {
       event.preventDefault();
-      if (!drug) {
+      if (!drugName) {
         alert("O preenchimento do campo Medicamento é obrigatório.");
         return;
       } else if (!lab) {
@@ -43,7 +43,7 @@ export default function DrugForm() {
       method: "POST",
       body: JSON.stringify({
         imgDrug: imgDrug,
-        drug: drug,
+        drugName: drugName,
         lab: lab,
         dosage: dosage,
         type: type,
@@ -83,8 +83,8 @@ export default function DrugForm() {
             required
             type="text"
             placeholder="Dipirona"
-            value={drug}
-            onChange={(event) => setDrug(event.target.value)}
+            value={drugName}
+            onChange={(event) => setDrugName(event.target.value)}
           />
         </label>
 
