@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import DrugItem from "../../components/DrugItem/DrugItem";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 export default function DrugListPage() {
   const [drugs, setDrugs] = useState([]);
@@ -17,9 +18,7 @@ export default function DrugListPage() {
     getDrugs();
   }, []);
 
-  console.log(drugs);
-
-  /* useEffect(() => {
+  useEffect(() => {
     setFilterByName(
       drugs.filter((item) => {
         if (
@@ -31,20 +30,19 @@ export default function DrugListPage() {
         }
       })
     );
-  }, [term]); */
+  }, [term, drugs]);
 
   return (
     <>
-      {/* <input
-        type="text"
+      <SearchBar
         value={term}
-        placeholder="Pesquisar medicamento"
+        placeholder="Digite um medicamento"
         onChange={(event) => setTerm(event.target.value)}
       />
+      <h2>Medicamentos cadastrados</h2>
       {filterByName.map((drug) => {
         return <DrugItem key={drug.id} value={drug} />;
-      })} */}
-      <DrugItem />
+      })}
     </>
   );
 }
