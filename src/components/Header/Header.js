@@ -20,6 +20,16 @@ export default function Header() {
           onClick={() => navigate("/mapa")}
         ></img>
         <div>
+          <button onClick={() => navigate("/mapa")}>Mapa</button>
+          <button onClick={() => navigate("/novafarmacia")}>
+            Nova Farmácia
+          </button>
+          <button onClick={() => navigate("/novomedicamento")}>
+            Novo Medicamento
+          </button>
+          <button onClick={() => navigate("/listamedicamentos")}>
+            Medicamentos Cadastrados
+          </button>
           <button onClick={handleLogout}>Sair</button>
         </div>
       </nav>
