@@ -14,8 +14,8 @@
       "city": "Joinville",
       "federativeUnit": "SC",
       "addressCompl": "Ao lado da Clamed",
-      "latitude": "-26,301601",
-      "longitude": "-48,846433",
+      "latitude": "-26.301601",
+      "longitude": "-48.846433",
       "id": "aa"
     },
     {
@@ -50,8 +50,8 @@
       "city": "Florianópolis",
       "federativeUnit": "SC",
       "addressCompl": "Ao lado da lotérica Bolinha.",
-      "latitude": "-27,594970",
-      "longitude": "-48,554805",
+      "latitude": "-27.594970",
+      "longitude": "-48.554805",
       "id": "cd"
     },
     {
@@ -68,8 +68,8 @@
       "city": "Maringá",
       "federativeUnit": "PR",
       "addressCompl": "Ao lado do Tecno Ótica",
-      "latitude": "-23,421039",
-      "longitude": "-51,937526",
+      "latitude": "-23.421039",
+      "longitude": "-51.937526",
       "id": "dc"
     },
     {
