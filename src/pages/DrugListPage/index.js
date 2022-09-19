@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import DrugItem from "../../components/DrugItem/DrugItem";
+import Header from "../../components/Header/Header";
 import SearchBar from "../../components/SearchBar/SearchBar";
 
 export default function DrugListPage() {
@@ -34,6 +35,7 @@ export default function DrugListPage() {
 
   return (
     <>
+      <Header />
       <SearchBar
         value={term}
         placeholder="Digite um medicamento"
