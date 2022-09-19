@@ -127,6 +127,26 @@ export default function PharmacyForm() {
     }
   }
 
+  function handleClean() {
+    if (window.confirm("Deseja limpar os campos?")) {
+      setCorporateName("");
+      setCnpj("");
+      setTradeName("");
+      setEmail("");
+      setPhone("");
+      setCellphone("");
+      setCep("");
+      setStreet("");
+      setAddressNumber("");
+      setDistrict("");
+      setCity("");
+      setFederativeUnit("");
+      setAddressCompl("");
+      setLatitude("");
+      setLongitude("");
+    }
+  }
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -290,7 +310,7 @@ export default function PharmacyForm() {
           />
         </label>
 
-        <button>Limpar</button>
+        <button onClick={handleClean}>Limpar</button>
         <button onSubmit={handleSubmit}>Salvar</button>
       </form>
     </>
