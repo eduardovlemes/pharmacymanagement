@@ -65,6 +65,18 @@ export default function DrugForm() {
     getType();
   }, []);
 
+  function handleClean() {
+    if (window.confirm("Deseja limpar os campos?")) {
+      setImgDrug("");
+      setDrugName("");
+      setLab("");
+      setDosage("");
+      setType("");
+      setPrice("");
+      setDescription("");
+    }
+  }
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -147,7 +159,7 @@ export default function DrugForm() {
           />
         </label>
 
-        <button>Limpar</button>
+        <button onClick={handleClean}>Limpar</button>
         <button onSubmit={handleSubmit}>Salvar</button>
       </form>
     </>
