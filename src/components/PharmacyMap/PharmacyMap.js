@@ -49,10 +49,14 @@ export default function PharmacyMap() {
                   <strong>Email: </strong>
                   {pharmacy.email}
                 </p>
-                <p>
-                  <strong>Telefone:</strong>
-                  {pharmacy.phone}
-                </p>
+
+                {pharmacy.phone !== "" ? (
+                  <p>
+                    <strong>Telefone: </strong>
+                    {pharmacy.phone}
+                  </p>
+                ) : null}
+
                 <p>
                   <strong>Celular: </strong>
                   {pharmacy.cellphone}
@@ -63,7 +67,13 @@ export default function PharmacyMap() {
                 <span>Bairro: {pharmacy.district}</span>
                 <span>Cidade: {pharmacy.city}</span>
                 <span>UF: {pharmacy.federativeUnit}</span>
-                <p>Complemento: {pharmacy.addressCompl}</p>
+
+                {pharmacy.addressCompl !== "" ? (
+                  <p>
+                    <strong>Complemento: </strong>
+                    {pharmacy.addressCompl}
+                  </p>
+                ) : null}
               </>
             </Popup>
           </Marker>
