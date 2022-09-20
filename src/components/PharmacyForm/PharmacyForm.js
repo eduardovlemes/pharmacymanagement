@@ -38,9 +38,6 @@ export default function PharmacyForm() {
           "O preenchimento do campo E-mail é obrigatório. Digite um E-mail válido."
         );
         return;
-      } else if (!phone) {
-        alert("O preenchimento do campo Telefone é obrigatório.");
-        return;
       } else if (!cellphone) {
         alert("O preenchimento do campo Celular é obrigatório.");
         return;
@@ -197,7 +194,6 @@ export default function PharmacyForm() {
         <label>
           Telefone*
           <input
-            required
             type="number"
             placeholder="(047) 0000-0000"
             value={phone}
