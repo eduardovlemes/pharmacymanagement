@@ -1,4 +1,5 @@
 import DrugDetail from "../DrugDetail/DrugDetail";
+import drugimage from "../../assets/drugimage.png";
 
 export default function DrugItem({ value }) {
   return (
@@ -7,7 +8,7 @@ export default function DrugItem({ value }) {
         <li>
           <img
             alt={"Medicamento" + value.drugName}
-            src={value.imgDrug}
+            src={drugimage}
             width={100}
           />
           <div>

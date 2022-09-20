@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 export default function DrugForm() {
-  const [imgDrug, setImgDrug] = useState("");
   const [drugName, setDrugName] = useState("");
   const [lab, setLab] = useState("");
   const [dosage, setDosage] = useState("");
@@ -42,7 +41,6 @@ export default function DrugForm() {
       },
       method: "POST",
       body: JSON.stringify({
-        imgDrug: imgDrug,
         drugName: drugName,
         lab: lab,
         dosage: dosage,
@@ -67,7 +65,6 @@ export default function DrugForm() {
 
   function handleClean() {
     if (window.confirm("Deseja limpar os campos?")) {
-      setImgDrug("");
       setDrugName("");
       setLab("");
       setDosage("");
@@ -80,15 +77,6 @@ export default function DrugForm() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label>
-          URL da Imagem do Medicamento*
-          <input
-            type="url"
-            placeholder="https://"
-            value={imgDrug}
-            onChange={(event) => setImgDrug(event.target.value)}
-          />
-        </label>
         <label>
           Medicamento*
           <input
