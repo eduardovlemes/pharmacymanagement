@@ -61,7 +61,7 @@ export default function PharmacyMap() {
                   <strong>Celular: </strong>
                   {pharmacy.cellphone}
                 </p>
-                <span>CEP: {pharmacy.cep}</span>
+                <span>CEP: {pharmacy.postalcode}</span>
                 <span>Rua: {pharmacy.street}</span>
                 <span>Número:{pharmacy.addressNumber}</span>
                 <span>Bairro: {pharmacy.district}</span>

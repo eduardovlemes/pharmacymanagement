@@ -7,7 +7,7 @@ export default function PharmacyForm() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [cellphone, setCellphone] = useState("");
-  const [cep, setCep] = useState("");
+  const [postalcode, setPostalcode] = useState("");
   const [street, setStreet] = useState("");
   const [addressNumber, setAddressNumber] = useState("");
   const [district, setDistrict] = useState("");
@@ -41,7 +41,7 @@ export default function PharmacyForm() {
       } else if (!cellphone) {
         alert("O preenchimento do campo Celular é obrigatório.");
         return;
-      } else if (!cep) {
+      } else if (!postalcode) {
         alert("O preenchimento do campo CEP é obrigatório.");
         return;
       } else if (!street) {
@@ -85,7 +85,7 @@ export default function PharmacyForm() {
         email: email,
         phone: phone,
         cellphone: cellphone,
-        cep: cep,
+        postalcode: postalcode,
         street: street,
         addressNumber: addressNumber,
         district: district,
@@ -101,7 +101,9 @@ export default function PharmacyForm() {
 
   async function handleAddress() {
     try {
-      await fetch(`https://viacep.com.br/ws/${cep.replace(/[^0-9]/, "")}/json/`)
+      await fetch(
+        `https://viacep.com.br/ws/${postalcode.replace(/[^0-9]/, "")}/json/`
+      )
         .then((response) => response.json())
         .then((dataFromViaCep) => {
           setStreet(dataFromViaCep.logradouro);
@@ -111,7 +113,7 @@ export default function PharmacyForm() {
         })
         .then(
           await fetch(
-            `https://nominatim.openstreetmap.org/search.php?q=${cep}+${street}+${district}&format=json`
+            `https://nominatim.openstreetmap.org/search.php?q=${postalcode}+${street}+${district}&format=json`
           )
             .then((response) => response.json())
             .then((dataFromNominatim) => {
@@ -132,7 +134,7 @@ export default function PharmacyForm() {
       setEmail("");
       setPhone("");
       setCellphone("");
-      setCep("");
+      setPostalcode("");
       setStreet("");
       setAddressNumber("");
       setDistrict("");
@@ -192,7 +194,7 @@ export default function PharmacyForm() {
         </label>
 
         <label>
-          Telefone*
+          Telefone
           <input
             type="number"
             placeholder="(047) 0000-0000"
@@ -221,8 +223,8 @@ export default function PharmacyForm() {
             required
             type="number"
             placeholder="00.000-000"
-            value={cep}
-            onChange={(event) => setCep(event.target.value)}
+            value={postalcode}
+            onChange={(event) => setPostalcode(event.target.value)}
             onBlur={handleAddress}
           />
         </label>
