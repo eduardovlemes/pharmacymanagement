@@ -1,3 +1,5 @@
+import DrugDetail from "../DrugDetail/DrugDetail";
+
 export default function DrugItem({ value }) {
   return (
     <>
@@ -12,7 +14,7 @@ export default function DrugItem({ value }) {
             <span>{value.drugName}</span>
             <span>{value.dosage}</span>
             <p>R$ {value.price}</p>
-            <p>{value.lab}</p>
+            <DrugDetail value={value} />
           </div>
         </li>
       </ul>
