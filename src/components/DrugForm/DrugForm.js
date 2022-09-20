@@ -94,7 +94,7 @@ export default function DrugForm() {
           <input
             required
             type="text"
-            placeholder="Dipirona"
+            placeholder="Vitamina C"
             value={drugName}
             onChange={(event) => setDrugName(event.target.value)}
           />
@@ -105,7 +105,7 @@ export default function DrugForm() {
           <input
             required
             type="text"
-            placeholder="Catarina Pharma"
+            placeholder="Catarinense Pharma"
             value={lab}
             onChange={(event) => setLab(event.target.value)}
           />
@@ -153,7 +153,7 @@ export default function DrugForm() {
           Descrição*
           <textarea
             type="text"
-            placeholder="Digite uma descrição do medicamento."
+            placeholder="Digite uma descrição sobre o medicamento."
             value={description}
             onChange={(event) => setDescription(event.target.value)}
           />
