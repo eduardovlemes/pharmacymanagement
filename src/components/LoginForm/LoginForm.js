@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import logo from "../../assets/logo1.png";
 
 export default function LoginForm() {
   const [email, setEmail] = useState();
@@ -35,12 +36,13 @@ export default function LoginForm() {
   }
 
   return (
-    <>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+    <form className="login-form" onSubmit={handleSubmit}>
+      <img className="login-logo" src={logo}></img>
+      <div className="login-fields">
         <label>
-          E-mail*
+          E-mail
           <input
+            className="login-input"
             required
             type="email"
             placeholder="exemplo@mail.com"
@@ -50,17 +52,22 @@ export default function LoginForm() {
         </label>
 
         <label>
-          Senha*
+          Senha
           <input
+            className="login-input"
             required
             type="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
           />
         </label>
-        <button type="submit">Entrar</button>
-        <button>Cadastrar usuário</button>
-      </form>
-    </>
+        <a href="/novousuario">Cadastrar usuário</a>
+        <div className="button-container">
+          <button className="login-button" type="submit">
+            Entrar
+          </button>
+        </div>
+      </div>
+    </form>
   );
 }
