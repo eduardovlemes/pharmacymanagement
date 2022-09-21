@@ -181,7 +181,8 @@
       "userName": "Eduardo V. Lemes",
       "occupation": "Desenvolvedor",
       "email": "eduardo@mail.com",
-      "password": "12345678"
+      "password": "12345678",
+      "id": "xc"
     }
   ],
   "userOccupation": [
