@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 export default function UserForm() {
   const [userImage, setUserImage] = useState("");
   const [userName, setUserName] = useState("");
-  const [occupation, setOccupation] = useState([]);
+  const [occupation, setOccupation] = useState("");
+  const [occupationOption, setOccupationOption] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -64,7 +65,7 @@ export default function UserForm() {
       await fetch("http://localhost:3001/userOccupation")
         .then((response) => response.json())
         .then((dataFromUserOccupationServer) => {
-          setOccupation(dataFromUserOccupationServer);
+          setOccupationOption(dataFromUserOccupationServer);
         });
     }
     getOccupation();
@@ -115,7 +116,7 @@ export default function UserForm() {
             <option value="" selected disabled>
               Selecione
             </option>
-            {occupation.map((type) => (
+            {occupationOption.map((type) => (
               <option value={type}>{type}</option>
             ))}
           </select>
