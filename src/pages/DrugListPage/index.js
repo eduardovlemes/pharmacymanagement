@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import DrugItem from "../../components/DrugItem/DrugItem";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import SearchBar from "../../components/SearchBar/SearchBar";
+import drugimage from "../../assets/drugimage.png";
+import ListItem from "../../components/ListItem/ListItem";
 
 export default function DrugListPage() {
   const [drugs, setDrugs] = useState([]);
@@ -44,7 +45,17 @@ export default function DrugListPage() {
       />
       <h2>Medicamentos cadastrados</h2>
       {filterByName.map((drug) => {
-        return <DrugItem key={drug.id} value={drug} />;
+        return (
+          <ListItem
+            key={drug.id}
+            value={drug}
+            alt={drug.drugName}
+            src={drugimage}
+            name={drug.drugName}
+            dosage={drug.dosage}
+            price={drug.price}
+          />
+        );
       })}
       <Footer />
     </>
