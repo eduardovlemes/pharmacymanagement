@@ -16,13 +16,13 @@ export default function PharmacyMap() {
   }, []);
 
   return (
-    <>
+    <div className="page-container">
       <h1>Farmácias cadastradas</h1>
       <MapContainer
+        className="map-container"
         center={[-13.747492, -53.470339]}
         zoom={4}
         scrollWheelZoom={true}
-        style={{ height: "500px", width: "500px" }}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -61,16 +61,14 @@ export default function PharmacyMap() {
                   <strong>Celular: </strong>
                   {pharmacy.cellphone}
                 </p>
-                <span>CEP: {pharmacy.postalcode}</span>
-                <span>Rua: {pharmacy.street}</span>
-                <span>Número:{pharmacy.addressNumber}</span>
-                <span>Bairro: {pharmacy.district}</span>
-                <span>Cidade: {pharmacy.city}</span>
-                <span>UF: {pharmacy.federativeUnit}</span>
+
+                <p><strong>Endereço: </strong>{pharmacy.street}, nº {pharmacy.addressNumber} - {pharmacy.district} - {pharmacy.city}/{pharmacy.federativeUnit} - {pharmacy.postalcode}
+                </p>
+                
 
                 {pharmacy.addressCompl !== "" ? (
                   <p>
-                    <strong>Complemento: </strong>
+                    <strong>Compl.: </strong>
                     {pharmacy.addressCompl}
                   </p>
                 ) : null}
@@ -79,6 +77,6 @@ export default function PharmacyMap() {
           </Marker>
         ))}
       </MapContainer>
-    </>
+    </div>
   );
 }
