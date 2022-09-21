@@ -12,26 +12,25 @@ export default function Header() {
 
   return (
     <header>
+      <img
+      className="header-logo"
+        alt="logo"
+        src={logo}
+        width="200"
+        onClick={() => navigate("/mapa")}
+      />
       <nav>
-        <img
-          alt="logo"
-          src={logo}
-          width="200"
-          onClick={() => navigate("/mapa")}
-        ></img>
-        <div>
-          <button onClick={() => navigate("/mapa")}>Mapa</button>
-          <button onClick={() => navigate("/novafarmacia")}>
-            Nova Farmácia
-          </button>
-          <button onClick={() => navigate("/novomedicamento")}>
-            Novo Medicamento
-          </button>
-          <button onClick={() => navigate("/listamedicamentos")}>
-            Medicamentos Cadastrados
-          </button>
-          <button onClick={handleLogout}>Sair</button>
-        </div>
+        <button onClick={() => navigate("/mapa")}>MAPA</button>
+        <button onClick={() => navigate("/novafarmacia")}>
+          CADASTRAR FARMÁCIA
+        </button>
+        <button onClick={() => navigate("/novomedicamento")}>
+          CADASTRAR MEDICAMENTO
+        </button>
+        <button onClick={() => navigate("/listamedicamentos")}>
+          LISTA DE MEDICAMENTOS
+        </button>
+        <button className="logout-button" onClick={handleLogout}>SAIR</button>
       </nav>
     </header>
   );

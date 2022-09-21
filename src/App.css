@@ -11,6 +11,10 @@ azul-secundário: #0095bf
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+h1 {
+  color: #006a8f;
+}
+
 label {
   display: grid;
   margin-top: 12px;
@@ -27,20 +31,6 @@ input {
 a {
   font-size: 12px;
   align-self: flex-end;
-}
-
-button {
-  background-color: #006a8f;
-  color: white;
-  font-weight: bold;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.712);
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0095bf;
 }
 
 /*login*/
@@ -76,8 +66,50 @@ button:hover {
 }
 
 .login-button {
+  background-color: #006a8f;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.712);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
   font-size: 16px;
   width: 160px;
   padding: 16px;
   margin-top: 30px;
+}
+
+.login-button:hover {
+  background-color: #0095bf;
+}
+
+/*header*/
+header {
+  background-color: #f7f7f7;
+}
+.header-logo {
+  margin: 16px;
+}
+nav {
+  background-color: #006a8f;
+  padding: 0px 50px;
+  display: flex;
+  justify-content: space-evenly;
+}
+header button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 10px 40px;
+}
+header button:hover {
+  background-color: #0095bf;
+}
+.logout-button {
+  background-color: #c3122f;
+  cursor: pointer;
+}
+.logout-button:hover {
+  font-weight: bold;
+  background-color: #c3122f;
 }
