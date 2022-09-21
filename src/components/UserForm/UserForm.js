@@ -63,8 +63,8 @@ export default function UserForm() {
     async function getOccupation() {
       await fetch("http://localhost:3001/userOccupation")
         .then((response) => response.json())
-        .then((dataFromuUserOccupationServer) => {
-          setOccupation(dataFromuUserOccupationServer);
+        .then((dataFromUserOccupationServer) => {
+          setOccupation(dataFromUserOccupationServer);
         });
     }
     getOccupation();
@@ -135,7 +135,7 @@ export default function UserForm() {
         <label>
           Senha*
           <textarea
-            type="text"
+            type="password"
             placeholder="senha"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
