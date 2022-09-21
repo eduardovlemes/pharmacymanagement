@@ -1,0 +1,61 @@
+import { useEffect, useState } from "react";
+import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import ListItem from "../../components/ListItem/ListItem";
+
+export default function UserListPage() {
+  const [users, setUsers] = useState([]);
+  const [filterByName, setFilterByName] = useState(users);
+  const [term, setTerm] = useState("");
+
+  useEffect(() => {
+    async function getUsers() {
+      await fetch("http://localhost:3001/users")
+        .then((response) => response.json())
+        .then((dataFromUsersServer) => {
+          setUsers(dataFromUsersServer);
+        });
+    }
+    getUsers();
+  }, []);
+
+  useEffect(() => {
+    setFilterByName(
+      users.filter((item) => {
+        if (
+          item.userName
+            .toLocaleLowerCase()
+            .indexOf(term.toLocaleLowerCase()) !== -1
+        ) {
+          return item;
+        }
+      })
+    );
+  }, [term, users]);
+
+  return (
+    <>
+      <Header />
+      <SearchBar
+        value={term}
+        placeholder="Digite o nome do usuário"
+        onChange={(event) => setTerm(event.target.value)}
+      />
+      <h2>Usuários cadastrados</h2>
+      {filterByName.map((user) => {
+        return (
+          <ListItem
+            key={user.id}
+            user={user}
+            alt={user.userName}
+            src={user.userImage}
+            name={user.userName}
+            occupation={user.occupation}
+          />
+        );
+      })}
+      <Footer />
+    </>
+  );
+}
