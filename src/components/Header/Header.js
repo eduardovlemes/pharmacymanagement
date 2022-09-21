@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <header>
       <img
-      className="header-logo"
+        className="header-logo"
         alt="logo"
         src={logo}
         width="200"
@@ -27,10 +27,18 @@ export default function Header() {
         <button onClick={() => navigate("/novomedicamento")}>
           CADASTRAR MEDICAMENTO
         </button>
+        <button onClick={() => navigate("/novousuario")}>
+          CADASTRAR USUÁRIO
+        </button>
         <button onClick={() => navigate("/listamedicamentos")}>
           LISTA DE MEDICAMENTOS
         </button>
-        <button className="logout-button" onClick={handleLogout}>SAIR</button>
+        <button onClick={() => navigate("/listausuarios")}>
+          LISTA DE USUÁRIOS
+        </button>
+        <button className="logout-button" onClick={handleLogout}>
+          SAIR
+        </button>
       </nav>
     </header>
   );
