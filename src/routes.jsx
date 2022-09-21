@@ -6,6 +6,7 @@ import DrugRegistrationPage from "./pages/DrugRegistrationPage";
 import DrugListPage from "./pages/DrugListPage";
 import UserRegistrationPage from "./pages/UserRegistrationPage";
 import UserListPage from "./pages/UserListPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 export default function Router() {
   return (
@@ -18,6 +19,7 @@ export default function Router() {
         <Route path="/listamedicamentos" element={<DrugListPage />} />
         <Route path="/novousuario" element={<UserRegistrationPage />} />
         <Route path="/listausuarios" element={<UserListPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );
