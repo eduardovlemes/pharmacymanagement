@@ -175,13 +175,22 @@
     }
   ],
   "drugType": ["Medicamento controlado", "Medicamento comum"],
-  "users":[{
-    "userImage": "https://avatars.githubusercontent.com/u/91350022?v=4",
-    "userName": "Eduardo",
-    "userLastName": "V. Lemes",
-    "occupation": "Desenvolvedor",
-    "email": "eduardo@mail.com",
-    "password": "12345678"
-  }],
-  "userOccupation": ["Atendente", "Diretor","Desenvolvedor", "Farmacêutico", "Gerente", "Logística", "Marketing" ]
+  "users": [
+    {
+      "userImage": "https://avatars.githubusercontent.com/u/91350022?v=4",
+      "userName": "Eduardo V. Lemes",
+      "occupation": "Desenvolvedor",
+      "email": "eduardo@mail.com",
+      "password": "12345678"
+    }
+  ],
+  "userOccupation": [
+    "Atendente",
+    "Diretor",
+    "Desenvolvedor",
+    "Farmacêutico",
+    "Gerente",
+    "Logística",
+    "Marketing"
+  ]
 }
