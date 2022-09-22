@@ -24,7 +24,9 @@ export default function DrugDetail({ value }) {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Ver detalhes</Button>
+      <button className="button-detail" onClick={handleOpen}>
+       DETALHES
+      </button>
       <Modal
         open={open}
         onClose={handleClose}
