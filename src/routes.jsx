@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import MapPage from "./pages/MapPage";
 import PharmacyRegistrationPage from "./pages/PharmacyRegistrationPage";
@@ -13,6 +13,7 @@ export default function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginPage />} />
+        <Route path="/login" element={<Navigate replace to="/" />} />
         <Route path="/mapa" element={<MapPage />} />
         <Route path="/novafarmacia" element={<PharmacyRegistrationPage />} />
         <Route path="/novomedicamento" element={<DrugRegistrationPage />} />
