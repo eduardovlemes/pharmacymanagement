@@ -8,7 +8,8 @@ export default function LoginForm() {
   const navigate = useNavigate();
 
   function handleSubmit(event) {
-    event.preventDefault();
+    try {
+      event.preventDefault();
     if (!email) {
       alert("Insira um email.");
       return;
@@ -19,9 +20,7 @@ export default function LoginForm() {
     ) {
       alert("Digite um e-mail válido.");
       return;
-    }
-
-    if (!password) {
+    } else if (!password) {
       alert("Insira a senha.");
       return;
     } else if (password.length < 8) {
@@ -33,6 +32,9 @@ export default function LoginForm() {
     }
     event.target.checkValidity();
     navigate("/mapa");
+    } catch (error) {
+      alert("ERRO no acesso! Tente novamente.")
+    }
   }
 
   return (
