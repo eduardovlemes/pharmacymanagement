@@ -11,7 +11,13 @@ azul-secundário: #0095bf
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1 {
+.page-container {
+  display: flex;
+  flex-direction: column;
+  margin: 24px 64px;
+}
+
+h2 {
   color: #006a8f;
 }
 
@@ -88,7 +94,7 @@ header {
   background-color: #f7f7f7;
 }
 .header-logo {
-  margin: 16px;
+  margin: 16px 48px;
 }
 nav {
   background-color: #006a8f;
@@ -100,7 +106,7 @@ header button {
   background-color: transparent;
   color: white;
   border: none;
-  padding: 10px 40px;
+  padding: 14px 30px;
 }
 header button:hover {
   background-color: #0095bf;
@@ -116,13 +122,7 @@ header button:hover {
 
 /*mapa*/
 
-.page-container {
-  display: flex;
-  flex-direction: column;
-  margin: 24px 64px;
-}
-
-.page-container p {
+.map-container p {
   margin: 8px;
 }
 
@@ -131,4 +131,86 @@ header button:hover {
   width: 100%;
   height: 500px;
   border-radius: 10px;
+}
+/*searchBar*/
+.title-search-area {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.search-bar {
+  width: 400px;
+  margin-left: 150px;
+}
+
+/*listas*/
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 16px;
+  margin: 10px;
+  padding: 16px 0px;
+}
+
+.list-item:hover {
+  background-color: white;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.356);
+}
+
+.list-item p {
+  font-size: 14px;
+}
+
+.user-photo {
+  border-radius: 16px;
+  margin-bottom: 10px;
+}
+
+.button-detail {
+  background-color: #c3122f;
+  color: white;
+  font-weight: bold;
+  padding: 8px;
+  width: 140px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 12px;
+}
+
+/*footer*/
+footer {
+  background-color: #f7f7f7;
+  height: 200px;
+  margin-top: 64px;
+}
+.red-footer {
+  background-color: #c3122f;
+  height: 40px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  margin-right: 100px;
+}
+
+footer p {
+  margin-top: 10px;
+  color: #006a8f;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+footer a {
+  text-decoration: none;
+  color: #0095bf;
 }
