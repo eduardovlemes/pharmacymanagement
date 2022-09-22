@@ -1,7 +1,10 @@
 export default function Footer() {
   return (
     <footer>
-      <ul>
+      <div className="red-footer" />
+
+      <ul className="footer-links">
+        <p>SIGA-NOS NAS REDES</p>
         <li>
           <a
             href="https://www.linkedin.com/in/eduardovlemes/"
