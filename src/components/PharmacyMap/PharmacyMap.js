@@ -17,7 +17,7 @@ export default function PharmacyMap() {
 
   return (
     <div className="page-container">
-      <h1>Farmácias cadastradas</h1>
+      <h2>Farmácias cadastradas</h2>
       <MapContainer
         className="map-container"
         center={[-13.747492, -53.470339]}
@@ -62,9 +62,12 @@ export default function PharmacyMap() {
                   {pharmacy.cellphone}
                 </p>
 
-                <p><strong>Endereço: </strong>{pharmacy.street}, nº {pharmacy.addressNumber} - {pharmacy.district} - {pharmacy.city}/{pharmacy.federativeUnit} - {pharmacy.postalcode}
+                <p>
+                  <strong>Endereço: </strong>
+                  {pharmacy.street}, nº {pharmacy.addressNumber} -{" "}
+                  {pharmacy.district} - {pharmacy.city}/
+                  {pharmacy.federativeUnit} - {pharmacy.postalcode}
                 </p>
-                
 
                 {pharmacy.addressCompl !== "" ? (
                   <p>
