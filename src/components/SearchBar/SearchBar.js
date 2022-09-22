@@ -1,12 +1,13 @@
 export default function SearchBar({ onChange, placeholder, value }) {
   return (
-    <div>
+    <>
       <input
+        className="search-bar"
         type="text"
         placeholder={placeholder}
         onChange={onChange}
         value={value}
       />
-    </div>
+    </>
   );
 }
