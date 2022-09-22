@@ -10,17 +10,19 @@ export default function ListItem({
   price,
 }) {
   return (
-    <ul>
-      <li>
-        <img alt={alt} src={src} width={200} />
-        <div>
-          <p>{name}</p>
-          <p>{occupation}</p>
-          {dosage ? <p>{dosage}</p> : null}
-          {price ? <p>R$ {price}</p> : null}
-          {value ? <DrugDetail value={value} /> : null}
-        </div>
-      </li>
-    </ul>
+    <li className="list-item">
+      <img className="user-photo" alt={alt} src={src} width={200} />
+      <div>
+        <p>{name}</p>
+        <p>{occupation}</p>
+        <p>{dosage}</p>
+        {price ? (
+          <p>
+            <strong>R$ {price}</strong>
+          </p>
+        ) : null}
+        {value ? <DrugDetail value={value} /> : null}
+      </div>
+    </li>
   );
 }

@@ -37,24 +37,30 @@ export default function UserListPage() {
   return (
     <>
       <Header />
-      <SearchBar
-        value={term}
-        placeholder="Digite o nome do usuário"
-        onChange={(event) => setTerm(event.target.value)}
-      />
-      <h2>Usuários cadastrados</h2>
-      {filterByName.map((user) => {
-        return (
-          <ListItem
-            key={user.id}
-            user={user}
-            alt={user.userName}
-            src={user.userImage}
-            name={user.userName}
-            occupation={user.occupation}
+      <div className="page-container">
+        <div className="title-search-area">
+          <SearchBar
+            value={term}
+            placeholder="Digite o nome do usuário"
+            onChange={(event) => setTerm(event.target.value)}
           />
-        );
-      })}
+          <h2>Usuários cadastrados</h2>
+        </div>
+        <ul className="list-container">
+          {filterByName.map((user) => {
+            return (
+              <ListItem
+                key={user.id}
+                user={user}
+                alt={user.userName}
+                src={user.userImage}
+                name={user.userName}
+                occupation={user.occupation}
+              />
+            );
+          })}
+        </ul>
+      </div>
       <Footer />
     </>
   );

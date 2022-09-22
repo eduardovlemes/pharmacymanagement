@@ -38,25 +38,31 @@ export default function DrugListPage() {
   return (
     <>
       <Header />
-      <SearchBar
-        value={term}
-        placeholder="Digite um medicamento"
-        onChange={(event) => setTerm(event.target.value)}
-      />
-      <h2>Medicamentos cadastrados</h2>
-      {filterByName.map((drug) => {
-        return (
-          <ListItem
-            key={drug.id}
-            value={drug}
-            alt={drug.drugName}
-            src={drugimage}
-            name={drug.drugName}
-            dosage={drug.dosage}
-            price={drug.price}
+      <div className="page-container">
+        <div className="title-search-area">
+          <SearchBar
+            value={term}
+            placeholder="Digite um medicamento"
+            onChange={(event) => setTerm(event.target.value)}
           />
-        );
-      })}
+          <h2>Medicamentos cadastrados</h2>
+        </div>
+        <ul className="list-container">
+          {filterByName.map((drug) => {
+            return (
+              <ListItem
+                key={drug.id}
+                value={drug}
+                alt={drug.drugName}
+                src={drugimage}
+                name={drug.drugName}
+                dosage={drug.dosage}
+                price={drug.price}
+              />
+            );
+          })}
+        </ul>
+      </div>
       <Footer />
     </>
   );
