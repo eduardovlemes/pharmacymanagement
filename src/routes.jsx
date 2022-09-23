@@ -12,6 +12,7 @@ import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 
 export default function Router() {
   const { authenticated } = useLoginAuth();
+
   return (
     <BrowserRouter>
       <Routes>
@@ -23,7 +24,6 @@ export default function Router() {
           <Route path="/novafarmacia" element={<PharmacyRegistrationPage />} />
           <Route path="/novomedicamento" element={<DrugRegistrationPage />} />
           <Route path="/listamedicamentos" element={<DrugListPage />} />
-          
           <Route path="/listausuarios" element={<UserListPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
