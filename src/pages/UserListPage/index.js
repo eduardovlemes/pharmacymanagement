@@ -41,7 +41,7 @@ export default function UserListPage() {
         <div className="title-search-area">
           <SearchBar
             value={term}
-            placeholder="Digite o nome do usuário"
+            placeholder="Buscar por usuário..."
             onChange={(event) => setTerm(event.target.value)}
           />
           <h2>Usuários cadastrados</h2>

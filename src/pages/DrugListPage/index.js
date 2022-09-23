@@ -42,7 +42,7 @@ export default function DrugListPage() {
         <div className="title-search-area">
           <SearchBar
             value={term}
-            placeholder="Digite um medicamento"
+            placeholder="Buscar por medicamento.."
             onChange={(event) => setTerm(event.target.value)}
           />
           <h2>Medicamentos cadastrados</h2>

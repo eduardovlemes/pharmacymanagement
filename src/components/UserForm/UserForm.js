@@ -84,6 +84,11 @@ export default function UserForm() {
   return (
     <div className="page-container">
       <h2>Cadastrar usuário</h2>
+      <div className="user-photo">
+        {userImage && (
+          <img className="user-photo" src={userImage} alt="user" width={200} />
+        )}
+      </div>
       <form onSubmit={handleSubmit}>
         <label>
           URL da foto*
@@ -101,7 +106,7 @@ export default function UserForm() {
             <input
               required
               type="text"
-              placeholder="Nome e sobrenome"
+              placeholder="Nome e Sobrenome"
               value={userName}
               onChange={(event) => setUserName(event.target.value)}
             />
