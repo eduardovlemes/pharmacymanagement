@@ -147,170 +147,178 @@ export default function PharmacyForm() {
   }
 
   return (
-    <>
+    <div className="page-container">
+      <h2>Cadastrar farmácia</h2>
       <form onSubmit={handleSubmit}>
-        <label>
-          Razão Social*
-          <input
-            required
-            type="text"
-            placeholder="DEVinPharmacy LTDA."
-            value={corporateName}
-            onChange={(event) => setCorporateName(event.target.value)}
-          />
-        </label>
+        <div className="form-line">
+          <label className="input-32">
+            Razão Social*
+            <input
+              required
+              type="text"
+              placeholder="DEVinPharmacy LTDA."
+              value={corporateName}
+              onChange={(event) => setCorporateName(event.target.value)}
+            />
+          </label>
 
-        <label>
-          CNPJ*
-          <input
-            required
-            type="number"
-            placeholder="00.000.000/0000-00"
-            value={cnpj}
-            onChange={(event) => setCnpj(event.target.value)}
-          />
-        </label>
+          <label className="input-32">
+            CNPJ*
+            <input
+              required
+              type="number"
+              placeholder="00.000.000/0000-00"
+              value={cnpj}
+              onChange={(event) => setCnpj(event.target.value)}
+            />
+          </label>
 
-        <label>
-          Nome Fantasia*
-          <input
-            required
-            type="text"
-            placeholder="Drogaria Catarina"
-            value={tradeName}
-            onChange={(event) => setTradeName(event.target.value)}
-          />
-        </label>
+          <label className="input-32">
+            Nome Fantasia*
+            <input
+              required
+              type="text"
+              placeholder="Drogaria Catarina"
+              value={tradeName}
+              onChange={(event) => setTradeName(event.target.value)}
+            />
+          </label>
+        </div>
+        <div className="form-line">
+          <label className="input-32">
+            E-mail*
+            <input
+              required
+              type="email"
+              placeholder="exemplo@mail.com"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+            />
+          </label>
 
-        <label>
-          E-mail*
-          <input
-            required
-            type="email"
-            placeholder="exemplo@mail.com"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-          />
-        </label>
+          <label className="input-32">
+            Telefone
+            <input
+              type="number"
+              placeholder="(047) 0000-0000"
+              value={phone}
+              onChange={(event) => setPhone(event.target.value)}
+            />
+          </label>
 
-        <label>
-          Telefone
-          <input
-            type="number"
-            placeholder="(047) 0000-0000"
-            value={phone}
-            onChange={(event) => setPhone(event.target.value)}
-          />
-        </label>
-
-        <label>
-          Celular*
-          <input
-            required
-            type="number"
-            placeholder="(047) 9 0000-0000"
-            value={cellphone}
-            onChange={(event) => setCellphone(event.target.value)}
-          />
-        </label>
+          <label className="input-32">
+            Celular*
+            <input
+              required
+              type="number"
+              placeholder="(047) 9 0000-0000"
+              value={cellphone}
+              onChange={(event) => setCellphone(event.target.value)}
+            />
+          </label>
+        </div>
 
         <hr></hr>
 
-        <label>Endereço</label>
-        <label>
-          CEP*
-          <input
-            required
-            type="number"
-            placeholder="00.000-000"
-            value={postalcode}
-            onChange={(event) => setPostalcode(event.target.value)}
-            onBlur={handleAddress}
-          />
-        </label>
+        <div className="form-line">
+          <label className="input-15">
+            CEP*
+            <input
+              required
+              type="number"
+              placeholder="00.000-000"
+              value={postalcode}
+              onChange={(event) => setPostalcode(event.target.value)}
+              onBlur={handleAddress}
+            />
+          </label>
 
-        <label>
-          Logradouro*
-          <input
-            required
-            type="text"
-            value={street}
-            onChange={(event) => setStreet(event.target.value)}
-          />
-        </label>
+          <label className="input-49">
+            Logradouro*
+            <input
+              required
+              type="text"
+              value={street}
+              onChange={(event) => setStreet(event.target.value)}
+            />
+          </label>
 
-        <label>
-          Número*
-          <input
-            required
-            type="number"
-            value={addressNumber}
-            onChange={(event) => setAddressNumber(event.target.value)}
-          />
-        </label>
+          <label className="input-5">
+            Número*
+            <input
+              required
+              type="number"
+              value={addressNumber}
+              onChange={(event) => setAddressNumber(event.target.value)}
+            />
+          </label>
 
-        <label>
-          Bairro*
-          <input
-            required
-            type="text"
-            value={district}
-            onChange={(event) => setDistrict(event.target.value)}
-          />
-        </label>
+          <label className="input-15">
+            Complemento
+            <input
+              type="text"
+              value={addressCompl}
+              onChange={(event) => setAddressCompl(event.target.value)}
+            />
+          </label>
+        </div>
 
-        <label>
-          Cidade*
-          <input
-            required
-            type="text"
-            value={city}
-            onChange={(event) => setCity(event.target.value)}
-          />
-        </label>
+        <div className="form-line">
+          <label className="input-25">
+            Bairro*
+            <input
+              required
+              type="text"
+              value={district}
+              onChange={(event) => setDistrict(event.target.value)}
+            />
+          </label>
 
-        <label>
-          Estado*
-          <input
-            required
-            type="text"
-            value={federativeUnit}
-            onChange={(event) => setFederativeUnit(event.target.value)}
-          />
-        </label>
+          <label className="input-25">
+            Cidade*
+            <input
+              required
+              type="text"
+              value={city}
+              onChange={(event) => setCity(event.target.value)}
+            />
+          </label>
 
-        <label>
-          Complemento
-          <input
-            type="text"
-            value={addressCompl}
-            onChange={(event) => setAddressCompl(event.target.value)}
-          />
-        </label>
+          <label className="input-5">
+            Estado*
+            <input
+              required
+              type="text"
+              value={federativeUnit}
+              onChange={(event) => setFederativeUnit(event.target.value)}
+            />
+          </label>
 
-        <label>
-          Latitude*
-          <input
-            required
-            type="number"
-            value={latitude}
-            onChange={(event) => setLatitude(event.target.value)}
-          />
-        </label>
+          <label className="input-5">
+            Latitude*
+            <input
+              required
+              type="number"
+              value={latitude}
+              onChange={(event) => setLatitude(event.target.value)}
+            />
+          </label>
 
-        <label>
-          Longitude*
-          <input
-            required
-            type="number"
-            value={longitude}
-            onChange={(event) => setLongitude(event.target.value)}
-          />
-        </label>
-
-        <button onClick={handleClean}>Limpar</button>
-        <button onSubmit={handleSubmit}>Salvar</button>
+          <label className="input-5">
+            Longitude*
+            <input
+              required
+              type="number"
+              value={longitude}
+              onChange={(event) => setLongitude(event.target.value)}
+            />
+          </label>
+        </div>
+        <div className="buttons-form">
+          <button className="button-clean" onClick={handleClean}>Limpar</button>
+          <button className="button-save" onSubmit={handleSubmit}>Salvar</button>
+        </div>
       </form>
-    </>
+    </div>
   );
 }

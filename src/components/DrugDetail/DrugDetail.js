@@ -12,9 +12,10 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 400,
   bgcolor: "background.paper",
-  border: "2px solid #000",
+  borderRadius: 5,
   boxShadow: 24,
   p: 4,
+  alignItems: "center",
 };
 
 export default function DrugDetail({ value }) {
@@ -25,7 +26,7 @@ export default function DrugDetail({ value }) {
   return (
     <div>
       <button className="button-detail" onClick={handleOpen}>
-       DETALHES
+        DETALHES
       </button>
       <Modal
         open={open}
@@ -34,20 +35,22 @@ export default function DrugDetail({ value }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            {value.drugName} {value.dosage}
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <div className="modal">
             <img
               alt={"Medicamento" + value.drugName}
               src={drugimage}
               width={150}
             />
-            <p>R$ {value.price}</p>
-            <p>{value.lab}</p>
+            <h3>
+              {value.drugName} {value.dosage}
+            </h3>
             <p>{value.type}</p>
-            <p>{value.description}</p>
-          </Typography>
+            <p className="lab">{value.lab}</p>
+            <h4>
+              <i>R$ {value.price}</i>
+            </h4>
+            <p className="description">{value.description}</p>
+          </div>
         </Box>
       </Modal>
     </div>

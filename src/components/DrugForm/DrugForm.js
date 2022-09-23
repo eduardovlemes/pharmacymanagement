@@ -75,81 +75,92 @@ export default function DrugForm() {
   }
 
   return (
-    <>
+    <div className="page-container">
+      <h2>Cadastrar medicamento</h2>
       <form onSubmit={handleSubmit}>
-        <label>
-          Medicamento*
-          <input
-            required
-            type="text"
-            placeholder="Vitamina C"
-            value={drugName}
-            onChange={(event) => setDrugName(event.target.value)}
-          />
-        </label>
+        <div className="form-line">
+          <label className="input-49">
+            Medicamento*
+            <input
+              required
+              type="text"
+              placeholder="Vitamina C"
+              value={drugName}
+              onChange={(event) => setDrugName(event.target.value)}
+            />
+          </label>
 
-        <label>
-          Laboratório*
-          <input
-            required
-            type="text"
-            placeholder="Catarinense Pharma"
-            value={lab}
-            onChange={(event) => setLab(event.target.value)}
-          />
-        </label>
+          <label className="input-49">
+            Laboratório*
+            <input
+              required
+              type="text"
+              placeholder="Catarinense Pharma"
+              value={lab}
+              onChange={(event) => setLab(event.target.value)}
+            />
+          </label>
+        </div>
 
-        <label>
-          Dosagem*
-          <input
-            required
-            type="text"
-            placeholder="100 mg"
-            value={dosage}
-            onChange={(event) => setDosage(event.target.value)}
-          />
-        </label>
+        <div className="form-line">
+          <label className="input-32">
+            Dosagem*
+            <input
+              required
+              type="text"
+              placeholder="100 mg"
+              value={dosage}
+              onChange={(event) => setDosage(event.target.value)}
+            />
+          </label>
 
-        <label>
-          Tipo*
-          <select
-            required
-            value={type}
-            onChange={(event) => setType(event.target.value)}
-          >
-            <option value="" selected disabled>
-              Selecione
-            </option>
-            {drugType.map((type) => (
-              <option value={type}>{type}</option>
-            ))}
-          </select>
-        </label>
+          <label className="input-32">
+            Tipo*
+            <select
+              required
+              value={type}
+              onChange={(event) => setType(event.target.value)}
+            >
+              <option value="" selected disabled>
+                Selecione
+              </option>
+              {drugType.map((type) => (
+                <option value={type}>{type}</option>
+              ))}
+            </select>
+          </label>
 
-        <label>
-          Preço Unitário*
-          <input
-            required
-            type="number"
-            placeholder="R$ 9,90"
-            value={price}
-            onChange={(event) => setPrice(event.target.value)}
-          />
-        </label>
+          <label className="input-32">
+            Preço Unitário*
+            <input
+              required
+              type="number"
+              placeholder="R$ 9,90"
+              value={price}
+              onChange={(event) => setPrice(event.target.value)}
+            />
+          </label>
+        </div>
 
         <label>
           Descrição*
           <textarea
             type="text"
+            rows={3}
             placeholder="Digite uma descrição sobre o medicamento."
             value={description}
             onChange={(event) => setDescription(event.target.value)}
           />
         </label>
-
-        <button onClick={handleClean}>Limpar</button>
-        <button onSubmit={handleSubmit}>Salvar</button>
+        <div className="buttons-form">
+          <button className="button-clean" onClick={handleClean}>
+            Limpar
+          </button>
+          <button className="button-save" onSubmit={handleSubmit}>
+            Salvar
+          </button>
+        </div>
       </form>
-    </>
+    </div>
   );
 }

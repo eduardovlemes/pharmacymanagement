@@ -13,12 +13,12 @@ export default function ListItem({
     <li className="list-item">
       <img className="user-photo" alt={alt} src={src} width={200} />
       <div>
-        <p>{name}</p>
+        <h3>{name}</h3>
         <p>{occupation}</p>
         <p>{dosage}</p>
         {price ? (
           <p>
-            <strong>R$ {price}</strong>
+            <i>R$ {price}</i>
           </p>
         ) : null}
         {value ? <DrugDetail value={value} /> : null}

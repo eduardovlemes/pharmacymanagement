@@ -82,10 +82,11 @@ export default function UserForm() {
   }
 
   return (
-    <>
+    <div className="page-container">
+      <h2>Cadastrar usuário</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          Url da foto*
+          URL da foto*
           <input
             required
             type="text"
@@ -94,58 +95,66 @@ export default function UserForm() {
             onChange={(event) => setUserImage(event.target.value)}
           />
         </label>
+        <div className="form-line">
+          <label className="input-49">
+            Nome completo*
+            <input
+              required
+              type="text"
+              placeholder="Nome e sobrenome"
+              value={userName}
+              onChange={(event) => setUserName(event.target.value)}
+            />
+          </label>
 
-        <label>
-          Nome completo*
-          <input
-            required
-            type="text"
-            placeholder="nome e sobrenome"
-            value={userName}
-            onChange={(event) => setUserName(event.target.value)}
-          />
-        </label>
+          <label className="input-49">
+            Profissão/Cargo*
+            <select
+              required
+              value={occupation}
+              onChange={(event) => setOccupation(event.target.value)}
+            >
+              <option value="" selected disabled>
+                Selecione
+              </option>
+              {occupationOption.map((type) => (
+                <option value={type}>{type}</option>
+              ))}
+            </select>
+          </label>
+        </div>
 
-        <label>
-          Profissão/Cargo*
-          <select
-            required
-            value={occupation}
-            onChange={(event) => setOccupation(event.target.value)}
-          >
-            <option value="" selected disabled>
-              Selecione
-            </option>
-            {occupationOption.map((type) => (
-              <option value={type}>{type}</option>
-            ))}
-          </select>
-        </label>
+        <div className="form-line">
+          <label className="input-49">
+            E-mail*
+            <input
+              required
+              type="text"
+              placeholder="exemplo@mail.com"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+            />
+          </label>
 
-        <label>
-          E-mail*
-          <input
-            required
-            type="text"
-            placeholder="exemplo@mail.com"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-          />
-        </label>
+          <label className="input-49">
+            Senha*
+            <input
+              type="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+            />
+          </label>
+        </div>
 
-        <label>
-          Senha*
-          <textarea
-            type="password"
-            placeholder="senha"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </label>
-
-        <button onClick={handleClean}>Limpar</button>
-        <button onSubmit={handleSubmit}>Salvar</button>
+        <div className="buttons-form">
+          <button className="button-clean" onClick={handleClean}>
+            Limpar
+          </button>
+          <button className="button-save" onSubmit={handleSubmit}>
+            Salvar
+          </button>
+        </div>
       </form>
-    </>
+    </div>
   );
 }
