@@ -1,53 +1,42 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { useLoginAuth } from "../LoginAuthContext/LoginAuthContext";
 import logo from "../../assets/logo1.png";
 
+
 export default function LoginForm() {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const { changeTo } = useLoginAuth();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   function handleSubmit(event) {
-    try {
-      event.preventDefault();
+    event.preventDefault();
     if (!email) {
-      alert("Insira um email.");
-      return;
-    } else if (
-      !email.match(
-        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-      )
-    ) {
-      alert("Digite um e-mail válido.");
-      return;
+      alert("O campo E-mail é obrigatório.");
+      return
     } else if (!password) {
-      alert("Insira a senha.");
-      return;
+      alert("O campo Senha é obrigatório.");
+      return
     } else if (password.length < 8) {
       alert("A senha deve conter no mínimo 8 caracteres.");
-      return;
-    } else if (!password.match(/^[a-zA-Z0-9-]/)) {
-      alert("A senha deve conter apenas letras e/ou números.");
-      return;
-    }
-    event.target.checkValidity();
+      return
+    } 
+    changeTo(true)
     navigate("/mapa");
-    } catch (error) {
-      alert("ERRO no acesso! Tente novamente.")
-    }
   }
 
   return (
     <form className="login-form" onSubmit={handleSubmit}>
-      <img className="login-logo" src={logo}></img>
+      <img className="login-logo" src={logo} alt="pharmacy"></img>
       <div className="login-fields">
         <label>
           E-mail
           <input
             className="login-input"
-            required
             type="email"
             placeholder="exemplo@mail.com"
+            required
             value={email}
             onChange={(event) => setEmail(event.target.value)}
           />
@@ -57,8 +46,8 @@ export default function LoginForm() {
           Senha
           <input
             className="login-input"
-            required
             type="password"
+            required
             value={password}
             onChange={(event) => setPassword(event.target.value)}
           />

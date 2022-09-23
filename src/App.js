@@ -1,10 +1,13 @@
 import "./App.css";
+import { LoginAuthProvider } from "./components/LoginAuthContext/LoginAuthContext";
 import Router from "./routes";
 
 function App() {
   return (
     <>
-      <Router />
+      <LoginAuthProvider>
+        <Router />
+      </LoginAuthProvider>
     </>
   );
 }
