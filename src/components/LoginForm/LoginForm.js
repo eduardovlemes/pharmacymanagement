@@ -3,7 +3,6 @@ import { useNavigate } from "react-router";
 import { useLoginAuth } from "../LoginAuthContext/LoginAuthContext";
 import logo from "../../assets/logo1.png";
 
-
 export default function LoginForm() {
   const { changeTo } = useLoginAuth();
   const [email, setEmail] = useState("");
@@ -11,19 +10,34 @@ export default function LoginForm() {
   const navigate = useNavigate();
 
   function handleSubmit(event) {
-    event.preventDefault();
+    try {
+      event.preventDefault();
     if (!email) {
       alert("O campo E-mail é obrigatório.");
       return
+    } else if (
+      !email.match(
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+      )
+    ) {
+      alert("Digite um e-mail válido.");
+      return;
     } else if (!password) {
       alert("O campo Senha é obrigatório.");
       return
     } else if (password.length < 8) {
       alert("A senha deve conter no mínimo 8 caracteres.");
       return
-    } 
+    } else if (!password.match(/^[a-zA-Z0-9-]/)) {
+      alert("A senha deve conter apenas letras e/ou números.");
+      return;
+    }
+    event.target.checkValidity();
     changeTo(true)
     navigate("/mapa");
+    } catch (error) {
+      alert("ERRO na autenticação do login. Tente novamente.")
+    }    
   }
 
   return (
