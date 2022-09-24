@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 export default function NotFound() {
+  const navigate = useNavigate();
+
   return (
-    <>
-      <h1>ERRO 404!</h1>
-      <h3>Página não encontrada.</h3>
-      <p>
-        <Link to="/">Voltar ao início.</Link>
-      </p>
-    </>
+    <div className="page-container not-found">
+      <h1>ERRO 404</h1>
+      <h3>Página não encontrada</h3>
+      <button onClick={() => navigate("/")}>Voltar para página inicial</button>
+    </div>
   );
 }
