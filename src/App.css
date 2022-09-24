@@ -15,16 +15,24 @@ azul-secundário: #0095bf
   flex-direction: column;
   margin: 24px 64px;
 }
+
+h1 {
+  color: #c3122f;
+}
+
 h2 {
   color: #006a8f;
 }
+
 h3 {
   color: rgb(75, 75, 75);
 }
+
 label {
   display: grid;
   margin-top: 12px;
 }
+
 input,
 textarea,
 select {
@@ -138,13 +146,13 @@ header button:hover {
   width: 400px;
   margin-left: 150px;
 }
-.search-field{
+.search-field {
   display: inline-block;
 }
-.search-icon{
-  vertical-align:middle;
+.search-icon {
+  vertical-align: middle;
   padding-left: 5px;
-  color:#006a8f;
+  color: #006a8f;
 }
 
 /*lists*/
@@ -271,17 +279,12 @@ footer {
   display: flex;
   flex-direction: row-reverse;
   margin-right: 100px;
- gap: 8px;
+  gap: 8px;
 }
-.logo-icon{
+.logo-icon {
   padding-top: 8px;
 }
-footer p {
-  margin-top: 10px;
-  color: #006a8f;
-  font-size: 14px;
-  font-weight: bold;
-}
+
 footer a {
   text-decoration: none;
   color: #0095bf;
@@ -298,6 +301,26 @@ footer a {
   .input-32 {
     width: 100%;
   }
+}
+
+/*not found*/
+.not-found {
+  margin-top: 5%;
+  margin-bottom: 250px;
+}
+
+.not-found button {
+  background-color: #006a8f;
+  color: white;
+  padding: 8px;
+  width: 200px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+.not-found button:hover {
+  background-color: #0095bf;
 }
 
 @media only screen and (max-width: 1025px) {
