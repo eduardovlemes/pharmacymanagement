@@ -25,8 +25,8 @@ export default function Router() {
           <Route path="/novomedicamento" element={<DrugRegistrationPage />} />
           <Route path="/listamedicamentos" element={<DrugListPage />} />
           <Route path="/listausuarios" element={<UserListPage />} />
-          <Route path="*" element={<NotFoundPage />} />
         </Route>
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );
