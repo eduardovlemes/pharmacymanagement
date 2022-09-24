@@ -202,7 +202,7 @@ export default function PharmacyForm() {
             <input
               required
               type="text"
-              placeholder="Drogaria Catarina"
+              placeholder="Drogaria Pharmanagement"
               value={tradeName}
               onChange={(event) => setTradeName(event.target.value)}
             />

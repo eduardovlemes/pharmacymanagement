@@ -115,7 +115,7 @@ export default function DrugForm() {
             <input
               required
               type="text"
-              placeholder="Catarinense Pharma"
+              placeholder="Pharma Catarinense"
               value={lab}
               onChange={(event) => setLab(event.target.value)}
             />
