@@ -2,8 +2,8 @@ import {
   IoLogoLinkedin,
   IoLogoFacebook,
   IoLogoYoutube,
-  IoLogoInstagram,
 } from "react-icons/io5";
+import {AiFillInstagram} from "react-icons/ai"
 
 export default function Footer() {
   return (
@@ -11,7 +11,6 @@ export default function Footer() {
       <div className="red-footer" />
 
       <ul className="footer-links">
-        <p>SIGA-NOS NAS REDES</p>
         <li>
           <a
             href="https://www.linkedin.com/in/eduardovlemes/"
@@ -32,7 +31,7 @@ export default function Footer() {
         </li>
         <li>
           <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
-            <IoLogoInstagram size="23" className="logo-icon"/>
+            <AiFillInstagram size="23" className="logo-icon"/>
           </a>
         </li>
         <li>
