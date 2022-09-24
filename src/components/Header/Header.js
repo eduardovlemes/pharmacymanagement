@@ -1,13 +1,23 @@
 import { useNavigate } from "react-router";
 import logo from "../../assets/logo.png";
+import Swal from "sweetalert2";
 
 export default function Header() {
   const navigate = useNavigate();
 
   function handleLogout() {
-    if (window.confirm("Deseja sair?")) {
-      navigate("/");
-    }
+    Swal.fire({
+      title: "Deseja sair?",
+      icon: "warning",
+      width: "18rem",
+      showCancelButton: true,
+      confirmButtonColor: "#006a8f",
+      cancelButtonColor: "#c3122f",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate("/");
+      }
+    });
   }
 
   return (

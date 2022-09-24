@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 export default function DrugForm() {
   const [drugName, setDrugName] = useState("");
@@ -29,9 +30,19 @@ export default function DrugForm() {
         return;
       }
       event.target.checkValidity();
-      alert("Medicamento cadastrado com sucesso!");
+
+      Swal.fire({
+        title: "Medicamento cadastrado com sucesso!",
+        icon: "success",
+        width: "18rem",
+        confirmButtonColor: "#006a8f",
+      });
     } catch (error) {
-      alert("ERRO no cadastramento do medicamento. Tente novamente.");
+      Swal.fire({
+        icon: "error",
+        text: "Erro no cadastro do medicamento. Tente novamente.",
+        width: "18rem",
+      });
     }
 
     const sendDataToServer = fetch("http://localhost:3001/drugs", {
@@ -64,14 +75,23 @@ export default function DrugForm() {
   }, []);
 
   function handleClean() {
-    if (window.confirm("Deseja limpar os campos?")) {
-      setDrugName("");
-      setLab("");
-      setDosage("");
-      setType("");
-      setPrice("");
-      setDescription("");
-    }
+    Swal.fire({
+      title: "Deseja limpar os campos?",
+      icon: "warning",
+      width: "20rem",
+      showCancelButton: true,
+      confirmButtonColor: "#006a8f",
+      cancelButtonColor: "#c3122f",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setDrugName("");
+        setLab("");
+        setDosage("");
+        setType("");
+        setPrice("");
+        setDescription("");
+      }
+    });
   }
 
   return (
@@ -146,7 +166,7 @@ export default function DrugForm() {
           Descrição*
           <textarea
             type="text"
-            rows={3}
+            rows={5}
             placeholder="Digite uma descrição sobre o medicamento."
             value={description}
             onChange={(event) => setDescription(event.target.value)}

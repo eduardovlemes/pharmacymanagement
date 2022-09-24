@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 export default function UserForm() {
   const [userImage, setUserImage] = useState("");
@@ -38,9 +39,19 @@ export default function UserForm() {
         return;
       }
       event.target.checkValidity();
-      alert("Usuário cadastrado com sucesso!");
+
+      Swal.fire({
+        title: "Usuário cadastrado com sucesso!",
+        icon: "success",
+        width: "18rem",
+        confirmButtonColor: "#006a8f",
+      });
     } catch (error) {
-      alert("ERRO no cadastramento do usuário. Tente novamente.");
+      Swal.fire({
+        icon: "error",
+        text: "Erro no cadastro do usuário. Tente novamente.",
+        width: "18rem",
+      });
     }
 
     const sendDataToServer = fetch("http://localhost:3001/users", {
@@ -72,13 +83,22 @@ export default function UserForm() {
   }, []);
 
   function handleClean() {
-    if (window.confirm("Deseja limpar os campos?")) {
-      setUserImage("");
-      setUserName("");
-      setOccupation("");
-      setEmail("");
-      setPassword("");
-    }
+    Swal.fire({
+      title: "Deseja limpar os campos?",
+      icon: "warning",
+      width: "20rem",
+      showCancelButton: true,
+      confirmButtonColor: "#006a8f",
+      cancelButtonColor: "#c3122f",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setUserImage("");
+        setUserName("");
+        setOccupation("");
+        setEmail("");
+        setPassword("");
+      }
+    });
   }
 
   return (

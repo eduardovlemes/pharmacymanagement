@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 export default function PharmacyForm() {
   const [corporateName, setCorporateName] = useState("");
@@ -67,9 +68,19 @@ export default function PharmacyForm() {
         return;
       }
       event.target.checkValidity();
-      alert("Farmácia cadastrada com SUCESSO!");
+
+      Swal.fire({
+        title: "Farmácia cadastrada com sucesso!",
+        icon: "success",
+        width: "18rem",
+        confirmButtonColor: "#006a8f",
+      });
     } catch (error) {
-      alert("ERRO no cadastramento! Tente novamente.");
+      Swal.fire({
+        icon: "error",
+        text: "Erro no cadastro da farmácia. Tente novamente.",
+        width: "18rem",
+      });
     }
 
     const sendDataToServer = fetch("http://localhost:3001/pharmacies", {
@@ -122,28 +133,41 @@ export default function PharmacyForm() {
             })
         );
     } catch (error) {
-      alert("Erro no servidor. CEP ou Latitude e Longitude não encontrado.");
+      Swal.fire({
+        icon: "error",
+        text: "Ocorreu um erro. Tente novamente mais tarde.",
+        width: "18rem",
+      });
     }
   }
 
   function handleClean() {
-    if (window.confirm("Deseja limpar os campos?")) {
-      setCorporateName("");
-      setCnpj("");
-      setTradeName("");
-      setEmail("");
-      setPhone("");
-      setCellphone("");
-      setPostalcode("");
-      setStreet("");
-      setAddressNumber("");
-      setDistrict("");
-      setCity("");
-      setFederativeUnit("");
-      setAddressCompl("");
-      setLatitude("");
-      setLongitude("");
-    }
+    Swal.fire({
+      title: "Deseja limpar os campos?",
+      icon: "warning",
+      width: "20rem",
+      showCancelButton: true,
+      confirmButtonColor: "#006a8f",
+      cancelButtonColor: "#c3122f",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setCorporateName("");
+        setCnpj("");
+        setTradeName("");
+        setEmail("");
+        setPhone("");
+        setCellphone("");
+        setPostalcode("");
+        setStreet("");
+        setAddressNumber("");
+        setDistrict("");
+        setCity("");
+        setFederativeUnit("");
+        setAddressCompl("");
+        setLatitude("");
+        setLongitude("");
+      }
+    });
   }
 
   return (
@@ -315,8 +339,12 @@ export default function PharmacyForm() {
           </label>
         </div>
         <div className="buttons-form">
-          <button className="button-clean" onClick={handleClean}>Limpar</button>
-          <button className="button-save" onSubmit={handleSubmit}>Salvar</button>
+          <button className="button-clean" onClick={handleClean}>
+            Limpar
+          </button>
+          <button className="button-save" onSubmit={handleSubmit}>
+            Salvar
+          </button>
         </div>
       </form>
     </div>
