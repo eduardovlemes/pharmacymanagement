@@ -15,24 +15,19 @@ azul-secundário: #0095bf
   flex-direction: column;
   margin: 24px 64px;
 }
-
 h1 {
   color: #c3122f;
 }
-
 h2 {
   color: #006a8f;
 }
-
 h3 {
   color: rgb(75, 75, 75);
 }
-
 label {
   display: grid;
   margin-top: 12px;
 }
-
 input,
 textarea,
 select {
@@ -290,6 +285,26 @@ footer a {
   color: #0095bf;
 }
 
+
+/*not found*/
+.not-found {
+  margin-top: 5%;
+  margin-bottom: 250px;
+}
+.not-found button {
+  background-color: #006a8f;
+  color: white;
+  padding: 8px;
+  width: 200px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+.not-found button:hover {
+  background-color: #0095bf;
+}
+
+
 @media only screen and (max-width: 1100px) {
   form {
     flex-wrap: wrap;
@@ -301,26 +316,6 @@ footer a {
   .input-32 {
     width: 100%;
   }
-}
-
-/*not found*/
-.not-found {
-  margin-top: 5%;
-  margin-bottom: 250px;
-}
-
-.not-found button {
-  background-color: #006a8f;
-  color: white;
-  padding: 8px;
-  width: 200px;
-  border: none;
-  border-radius: 20px;
-  margin-top: 30px;
-}
-
-.not-found button:hover {
-  background-color: #0095bf;
 }
 
 @media only screen and (max-width: 1025px) {
