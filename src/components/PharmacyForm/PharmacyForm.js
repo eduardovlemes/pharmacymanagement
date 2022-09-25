@@ -67,6 +67,7 @@ export default function PharmacyForm() {
         alert("O preenchimento do campo Longitude é obrigatório.");
         return;
       }
+
       event.target.checkValidity();
 
       Swal.fire({
@@ -74,6 +75,24 @@ export default function PharmacyForm() {
         icon: "success",
         width: "18rem",
         confirmButtonColor: "#006a8f",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          setCorporateName("");
+          setCnpj("");
+          setTradeName("");
+          setEmail("");
+          setPhone("");
+          setCellphone("");
+          setPostalcode("");
+          setStreet("");
+          setAddressNumber("");
+          setDistrict("");
+          setCity("");
+          setFederativeUnit("");
+          setAddressCompl("");
+          setLatitude("");
+          setLongitude("");
+        }
       });
     } catch (error) {
       Swal.fire({
@@ -142,32 +161,23 @@ export default function PharmacyForm() {
   }
 
   function handleClean() {
-    Swal.fire({
-      title: "Deseja limpar os campos?",
-      icon: "warning",
-      width: "20rem",
-      showCancelButton: true,
-      confirmButtonColor: "#006a8f",
-      cancelButtonColor: "#c3122f",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        setCorporateName("");
-        setCnpj("");
-        setTradeName("");
-        setEmail("");
-        setPhone("");
-        setCellphone("");
-        setPostalcode("");
-        setStreet("");
-        setAddressNumber("");
-        setDistrict("");
-        setCity("");
-        setFederativeUnit("");
-        setAddressCompl("");
-        setLatitude("");
-        setLongitude("");
-      }
-    });
+    if (window.confirm("Deseja limpar os campos?")) {
+      setCorporateName("");
+      setCnpj("");
+      setTradeName("");
+      setEmail("");
+      setPhone("");
+      setCellphone("");
+      setPostalcode("");
+      setStreet("");
+      setAddressNumber("");
+      setDistrict("");
+      setCity("");
+      setFederativeUnit("");
+      setAddressCompl("");
+      setLatitude("");
+      setLongitude("");
+    }
   }
 
   return (

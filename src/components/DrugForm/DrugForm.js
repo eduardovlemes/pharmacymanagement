@@ -36,6 +36,15 @@ export default function DrugForm() {
         icon: "success",
         width: "18rem",
         confirmButtonColor: "#006a8f",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          setDrugName("");
+          setLab("");
+          setDosage("");
+          setType("");
+          setPrice("");
+          setDescription("");
+        }
       });
     } catch (error) {
       Swal.fire({
@@ -75,23 +84,14 @@ export default function DrugForm() {
   }, []);
 
   function handleClean() {
-    Swal.fire({
-      title: "Deseja limpar os campos?",
-      icon: "warning",
-      width: "20rem",
-      showCancelButton: true,
-      confirmButtonColor: "#006a8f",
-      cancelButtonColor: "#c3122f",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        setDrugName("");
-        setLab("");
-        setDosage("");
-        setType("");
-        setPrice("");
-        setDescription("");
-      }
-    });
+    if (window.confirm("Deseja limpar os campos?")) {
+      setDrugName("");
+      setLab("");
+      setDosage("");
+      setType("");
+      setPrice("");
+      setDescription("");
+    }
   }
 
   return (
@@ -163,7 +163,7 @@ export default function DrugForm() {
         </div>
 
         <label>
-          Descrição*
+          Descrição
           <textarea
             type="text"
             rows={5}

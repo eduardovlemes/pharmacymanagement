@@ -45,6 +45,14 @@ export default function UserForm() {
         icon: "success",
         width: "18rem",
         confirmButtonColor: "#006a8f",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          setUserImage("");
+          setUserName("");
+          setOccupation("");
+          setEmail("");
+          setPassword("");
+        }
       });
     } catch (error) {
       Swal.fire({
@@ -83,22 +91,13 @@ export default function UserForm() {
   }, []);
 
   function handleClean() {
-    Swal.fire({
-      title: "Deseja limpar os campos?",
-      icon: "warning",
-      width: "20rem",
-      showCancelButton: true,
-      confirmButtonColor: "#006a8f",
-      cancelButtonColor: "#c3122f",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        setUserImage("");
-        setUserName("");
-        setOccupation("");
-        setEmail("");
-        setPassword("");
-      }
-    });
+    if (window.confirm("Deseja limpar os campos?")) {
+      setUserImage("");
+      setUserName("");
+      setOccupation("");
+      setEmail("");
+      setPassword("");
+    }
   }
 
   return (
@@ -164,6 +163,7 @@ export default function UserForm() {
           <label className="input-49">
             Senha*
             <input
+              required
               type="password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
