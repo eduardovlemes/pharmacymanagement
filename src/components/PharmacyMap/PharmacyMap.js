@@ -30,7 +30,7 @@ export default function PharmacyMap() {
         />
 
         {pharmacies.map((pharmacy) => (
-          <Marker position={[pharmacy.latitude, pharmacy.longitude]}>
+          <Marker position={[pharmacy.latitude, pharmacy.longitude]} key={pharmacy.id}>
             <Popup>
               <>
                 <p>

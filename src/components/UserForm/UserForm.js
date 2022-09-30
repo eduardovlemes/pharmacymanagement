@@ -62,21 +62,21 @@ export default function UserForm() {
       });
     }
 
-    const sendDataToServer = fetch("http://localhost:3001/users", {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify({
-        userImage: userImage,
-        userName: userName,
-        occupation: occupation,
-        email: email,
-        password: password,
-      }),
-    });
-    console.log(sendDataToServer);
+    // Essa função não é necessária pois o Swal já faz o envio dos dados para o servidor
+    // const sendDataToServer = fetch("http://localhost:3001/users", {
+    //   headers: {
+    //     Accept: "application/json",
+    //     "Content-Type": "application/json",
+    //   },
+    //   method: "POST",
+    //   body: JSON.stringify({
+    //     userImage: userImage,
+    //     userName: userName,
+    //     occupation: occupation,
+    //     email: email,
+    //     password: password,
+    //   }),
+    // });
   }
 
   useEffect(() => {

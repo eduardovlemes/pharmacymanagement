@@ -21,17 +21,13 @@ export default function UserListPage() {
   }, []);
 
   useEffect(() => {
+    // ao usar o filter não é necessário usar if, pois ele já faz uma comparação de true ou false com o idexOf
     setFilterByName(
-      users.filter((item) => {
-        if (
-          item.userName
-            .toLocaleLowerCase()
-            .indexOf(term.toLocaleLowerCase()) !== -1
-        ) {
-          return item;
-        }
-      })
-    );
+      users.filter((item) => (
+        item.userName
+          .toLocaleLowerCase()
+          .indexOf(term.toLocaleLowerCase()) !== -1
+    )));
   }, [term, users]);
 
   return (

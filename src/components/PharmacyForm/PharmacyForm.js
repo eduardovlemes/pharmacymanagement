@@ -101,32 +101,32 @@ export default function PharmacyForm() {
         width: "18rem",
       });
     }
-
-    const sendDataToServer = fetch("http://localhost:3001/pharmacies", {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify({
-        corporateName: corporateName,
-        cnpj: cnpj,
-        tradeName: tradeName,
-        email: email,
-        phone: phone,
-        cellphone: cellphone,
-        postalcode: postalcode,
-        street: street,
-        addressNumber: addressNumber,
-        district: district,
-        city: city,
-        federativeUnit: federativeUnit,
-        addressCompl: addressCompl,
-        latitude: latitude,
-        longitude: longitude,
-      }),
-    });
-    console.log(sendDataToServer);
+  
+    // Essa função não é necessária pois o Swal já faz o envio dos dados para o servidor
+    // const sendDataToServer = fetch("http://localhost:3001/pharmacies", {
+    //   headers: {
+    //     Accept: "application/json",
+    //     "Content-Type": "application/json",
+    //   },
+    //   method: "POST",
+    //   body: JSON.stringify({
+    //     corporateName: corporateName,
+    //     cnpj: cnpj,
+    //     tradeName: tradeName,
+    //     email: email,
+    //     phone: phone,
+    //     cellphone: cellphone,
+    //     postalcode: postalcode,
+    //     street: street,
+    //     addressNumber: addressNumber,
+    //     district: district,
+    //     city: city,
+    //     federativeUnit: federativeUnit,
+    //     addressCompl: addressCompl,
+    //     latitude: latitude,
+    //     longitude: longitude,
+    //   }),
+    // });
   }
 
   async function handleAddress() {

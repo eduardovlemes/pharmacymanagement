@@ -54,22 +54,22 @@ export default function DrugForm() {
       });
     }
 
-    const sendDataToServer = fetch("http://localhost:3001/drugs", {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify({
-        drugName: drugName,
-        lab: lab,
-        dosage: dosage,
-        type: type,
-        price: price,
-        description: description,
-      }),
-    });
-    console.log(sendDataToServer);
+    // Essa função não é necessária pois o Swal já faz o envio dos dados para o servidor
+    // const sendDataToServer = fetch("http://localhost:3001/drugs", {
+    //   headers: {
+    //     Accept: "application/json",
+    //     "Content-Type": "application/json",
+    //   },
+    //   method: "POST",
+    //   body: JSON.stringify({
+    //     drugName: drugName,
+    //     lab: lab,
+    //     dosage: dosage,
+    //     type: type,
+    //     price: price,
+    //     description: description,
+    //   }),
+    // });
   }
 
   useEffect(() => {
