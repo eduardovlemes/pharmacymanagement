@@ -22,17 +22,13 @@ export default function DrugListPage() {
   }, []);
 
   useEffect(() => {
+    // ao usar o filter não é necessário usar if, pois ele já faz uma comparação de true ou false com o idexOf
     setFilterByName(
-      drugs.filter((item) => {
-        if (
-          item.drugName
-            .toLocaleLowerCase()
-            .indexOf(term.toLocaleLowerCase()) !== -1
-        ) {
-          return item;
-        }
-      })
-    );
+      drugs.filter((item) => (
+        item.drugName
+          .toLocaleLowerCase()
+          .indexOf(term.toLocaleLowerCase()) !== -1
+      )))
   }, [term, drugs]);
 
   return (
